@@ -25,9 +25,9 @@
   .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(27,33,80,.26)}
   .btn-lg{padding:20px 46px;font-size:1.15rem}
   .price-tag{font-family:var(--sans)}
-  .price-tag .was{color:rgba(255,255,255,.5);text-decoration:line-through;margin-right:10px;font-weight:600;font-size:1.35rem}
-  .price-tag .now{color:#fff;font-weight:800}
-  .price-tag .micro{color:rgba(255,255,255,.66)}
+  .price-tag .was{color:var(--sage);text-decoration:line-through;margin-right:10px;font-weight:600;font-size:1.35rem}
+  .price-tag .now{color:var(--navy);font-weight:800}
+  .price-tag .micro{color:var(--sage)}
   .micro{font-size:.86rem;color:var(--sage);letter-spacing:.3px}
   .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:2.5px;font-size:.74rem;font-weight:700;color:var(--gold-d)}
   .rule{width:54px;height:3px;background:var(--gold);border:0;margin:14px 0 26px}
@@ -44,12 +44,12 @@
   .hbar .btn{padding:11px 22px;font-size:.92rem;box-shadow:none}
 
   /* hero */
-  .hero{background:linear-gradient(160deg,#1B2150 0%,#252c63 100%);color:var(--cream);padding:70px 0 80px;overflow:hidden}
+  .hero{background:var(--cream);color:var(--ink);padding:70px 0 80px;overflow:hidden;border-bottom:1px solid var(--line)}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
-  .hero h1{color:#fff;font-size:3rem;margin-bottom:18px}
-  .hero p.lead{font-size:1.22rem;color:#d9d4c7;margin-bottom:30px;max-width:540px}
+  .hero h1{color:var(--navy);font-size:3rem;margin-bottom:18px}
+  .hero p.lead{font-size:1.22rem;color:#55524b;margin-bottom:30px;max-width:540px}
   .hero .cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .hero .trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:26px;color:#cfc9ba;font-size:.92rem}
+  .hero .trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:26px;color:#6f6a5c;font-size:.92rem}
   .hero .trust span{display:flex;align-items:center;gap:7px}
   .hero .trust .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
   .cover-shot{position:relative;text-align:center}
@@ -170,7 +170,7 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow" style="color:var(--gold)">🇺🇸 The American Edition</div>
+      <div class="eyebrow" style="color:var(--gold-d)">🇺🇸 The American Edition</div>
       <h1>What your family will need.<br>In one place.</h1>
       <p class="lead">A complete, fill-in-the-blanks workbook for your accounts, passwords, wishes and final instructions — so the people you love aren't left guessing during the hardest week of their lives.</p>
       <div class="cta-row">
