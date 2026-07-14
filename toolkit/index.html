@@ -119,9 +119,9 @@
         <div class="eyebrow" style="color:var(--gold-d)">🇺🇸 A free guide from The Estate Organizer</div>
         <h1>The Free Executor Toolkit</h1>
         <p class="lead">Being the executor is hard enough. This free guide gives you a clear path through the first days and the months that follow, so nothing important gets missed.</p>
-        <form id="optin" class="optin-form" novalidate>
-          <input type="text" id="name" placeholder="Your first name" autocomplete="given-name">
-          <input type="email" id="email" placeholder="Your email address" required autocomplete="email">
+        <form id="optin" class="optin-form" action="https://www.theestateorganiser.com.au/forms/2149642647/form_submissions" method="POST" target="kajabi_sink" novalidate>
+          <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name">
+          <input type="email" name="form_submission[email]" placeholder="Your email address" autocomplete="email">
           <button type="submit" class="btn btn-lg">Send me the free toolkit</button>
         </form>
         <p class="micro" id="privline">We respect your privacy. Unsubscribe anytime.</p>
@@ -195,9 +195,9 @@
     <div class="wrap">
       <h2>Give the people you love a clear path.</h2>
       <p>Enter your email and I will send the free Executor Toolkit straight to you.</p>
-      <form id="optin2" class="optin-form" novalidate>
-        <input type="text" id="name2" placeholder="Your first name" autocomplete="given-name">
-        <input type="email" id="email2" placeholder="Your email address" required autocomplete="email">
+      <form id="optin2" class="optin-form" action="https://www.theestateorganiser.com.au/forms/2149642647/form_submissions" method="POST" target="kajabi_sink" novalidate>
+        <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name">
+        <input type="email" name="form_submission[email]" placeholder="Your email address" autocomplete="email">
         <button type="submit" class="btn btn-lg">Send me the free toolkit</button>
       </form>
       <p class="micro">General information only. Not legal, financial or tax advice.</p>
@@ -221,34 +221,35 @@
     </div>
   </footer>
 
+<iframe name="kajabi_sink" title="capture" aria-hidden="true" style="position:absolute;left:-9999px;width:0;height:0;border:0"></iframe>
 <script>
-  var CAPTURE_ENDPOINT = "https://www.theestateorganiser.com.au/forms/2149642647/form_submissions";   // Kajabi US form
   var PDF_URL = "Executor-Toolkit-The-Estate-Organizer.pdf";   // hosted in /toolkit/
-  function deliver(name, email){
-    if(CAPTURE_ENDPOINT && email){
-      try{ fetch(CAPTURE_ENDPOINT,{method:'POST',mode:'no-cors',
-        headers:{'Content-Type':'application/x-www-form-urlencoded'},
-        body:'form_submission[name]='+encodeURIComponent(name||'')+'&form_submission[email]='+encodeURIComponent(email)}); }catch(err){}
-    }
+  var delivered = false, posted = false;
+  function showDone(){
+    if(delivered) return; delivered = true;
     document.getElementById('dl').setAttribute('href', PDF_URL);
-    var f=document.getElementById('optin'); f.style.display='none';
-    document.getElementById('privline').style.display='none';
-    var d=document.getElementById('done'); d.style.display='block';
+    var forms = document.querySelectorAll('.optin-form');
+    for(var i=0;i<forms.length;i++){ forms[i].style.display='none'; }
+    var pl = document.getElementById('privline'); if(pl){ pl.style.display='none'; }
+    var d = document.getElementById('done'); d.style.display='block';
     window.scrollTo({top:0,behavior:'smooth'});
     d.scrollIntoView({behavior:'smooth',block:'center'});
   }
-  function handle(id){
-    var frm=document.getElementById(id);
-    frm.addEventListener('submit',function(e){
-      e.preventDefault();
-      var nmEl=frm.querySelector('input[type=text]'); var nm=nmEl?nmEl.value.trim():'';
-      var em=frm.querySelector('input[type=email]').value.trim();
-      if(!nm){ nmEl.focus(); return; }
-      if(!em || em.indexOf('@')<1){ frm.querySelector('input[type=email]').focus(); return; }
-      deliver(nm, em);
+  // The forms POST natively into the hidden iframe; its load event = Kajabi accepted the lead.
+  var sink = document.getElementById('kajabi_sink');
+  if(sink){ sink.addEventListener('load', function(){ if(posted){ showDone(); } }); }
+  function wire(id){
+    var frm = document.getElementById(id);
+    frm.addEventListener('submit', function(e){
+      var nmEl = frm.querySelector('input[type=text]');  var nm = nmEl ? nmEl.value.trim() : '';
+      var emEl = frm.querySelector('input[type=email]'); var em = emEl ? emEl.value.trim() : '';
+      if(!nm){ e.preventDefault(); if(nmEl){ nmEl.focus(); } return; }
+      if(!em || em.indexOf('@') < 1){ e.preventDefault(); if(emEl){ emEl.focus(); } return; }
+      posted = true;                // allow the native submit into kajabi_sink
+      setTimeout(showDone, 3500);   // fallback so the visitor always gets the download
     });
   }
-  handle('optin'); handle('optin2');
+  wire('optin'); wire('optin2');
 </script>
 </body>
 </html>
