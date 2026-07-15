@@ -399,5 +399,40 @@
   </div>
 </footer>
 
+
+<!-- funnel: events + sticky buy + exit rescue -->
+<div id="eo-sticky" style="position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(27,33,80,.97);border-top:1px solid rgba(200,162,75,.45);padding:10px 14px;display:none;align-items:center;justify-content:center;gap:14px">
+  <span style="color:#F2EBDC;font-family:var(--sans);font-size:.93rem">The Estate Conversation Kit &middot; $27</span>
+  <a href="https://www.theestateorganiser.com.au/offers/Doipmqum/checkout" class="btn" style="padding:12px 22px;font-size:.93rem">Get it now</a>
+</div>
+<div id="eo-exit" style="display:none;position:fixed;inset:0;z-index:80;background:rgba(15,18,45,.72)">
+  <div style="max-width:470px;margin:12vh auto 0;background:#F2EBDC;border-radius:16px;padding:38px 34px;text-align:center;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.4)">
+    <button id="eo-exit-x" aria-label="Close" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.5rem;color:#8a8578;cursor:pointer">&times;</button>
+    <div class="eyebrow" style="color:var(--gold-d)">Before you go</div>
+    <h3 style="font-family:var(--serif);color:var(--navy);font-size:1.5rem;margin:8px 0 10px;font-weight:normal">Take the free Executor Toolkit with you.</h3>
+    <p style="color:#55524b;font-size:.98rem;margin:0 0 20px">The Day 1 to Month 12 roadmap every family eventually needs. Free, instant, no card.</p>
+    <a class="btn" href="/toolkit/">Get the free toolkit</a>
+  </div>
+</div>
+<script>
+(function(){
+  try{fbq('track','ViewContent',{content_name:'The Estate Conversation Kit'});}catch(e){}
+  document.querySelectorAll('a[href*="/offers/"]').forEach(function(a){
+    a.addEventListener('click',function(){ try{fbq('track','InitiateCheckout',{content_name:'The Estate Conversation Kit'});}catch(e){} });
+  });
+  var bar=document.getElementById('eo-sticky');
+  function onScroll(){
+    if(window.matchMedia('(max-width: 860px)').matches && window.scrollY>650){ bar.style.display='flex'; }
+    else { bar.style.display='none'; }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  var modal=document.getElementById('eo-exit'), KEY='eo_exit_seen';
+  function seen(){ try{ var v=localStorage.getItem(KEY); return v && (Date.now()-parseInt(v,10)) < 7*864e5; }catch(e){ return true; } }
+  function show(){ if(seen()) return; modal.style.display='block'; try{localStorage.setItem(KEY,String(Date.now()));}catch(e){} }
+  document.addEventListener('mouseout', function(e){ if(!e.relatedTarget && e.clientY<=0) show(); });
+  document.getElementById('eo-exit-x').addEventListener('click', function(){ modal.style.display='none'; });
+  modal.addEventListener('click', function(e){ if(e.target===modal) modal.style.display='none'; });
+})();
+</script>
 </body>
 </html>
