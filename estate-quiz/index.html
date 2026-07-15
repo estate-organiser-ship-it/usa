@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 2-Minute Estate Readiness Check</title>
+<meta name="description" content="How ready is your family if something happened tomorrow? Six quick questions, about two minutes. See where the gaps are and get a free toolkit to close them.">
+<style>
+  :root{
+    --navy:#1B2150; --cream:#F2EBDC; --gold:#C8A24B; --gold-d:#9a7a2e;
+    --sage:#7C8A6A; --ink:#2c3038; --line:#e4dccb; --white:#fff;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.65;background:var(--cream);-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--serif);color:var(--navy);line-height:1.18;font-weight:normal}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .small{max-width:760px}
+  a{color:inherit}
+  .btn{display:inline-block;background:var(--gold);color:var(--navy);font-family:var(--sans);font-weight:700;
+    text-decoration:none;padding:18px 38px;border-radius:6px;font-size:1.06rem;letter-spacing:.2px;
+    box-shadow:0 6px 20px rgba(27,33,80,.18);transition:transform .15s,box-shadow .15s;border:none;cursor:pointer}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(27,33,80,.26)}
+  .btn-lg{padding:20px 46px;font-size:1.15rem}
+  .price-tag{font-family:var(--sans)}
+  .price-tag .was{color:var(--sage);text-decoration:line-through;margin-right:10px;font-weight:600;font-size:1.35rem}
+  .price-tag .now{color:var(--navy);font-weight:800}
+  .price-tag .micro{color:var(--sage)}
+  .micro{font-size:.86rem;color:var(--sage);letter-spacing:.3px}
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:2.5px;font-size:.74rem;font-weight:700;color:var(--gold-d)}
+  .rule{width:54px;height:3px;background:var(--gold);border:0;margin:14px 0 26px}
+  .center{text-align:center}.center .rule{margin-left:auto;margin-right:auto}
+
+  /* header */
+  header{position:sticky;top:0;z-index:30;background:rgba(27,33,80,.97);backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(200,162,75,.35)}
+  .hbar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto}
+  .brand{font-family:var(--serif);color:var(--cream);font-size:1.18rem;letter-spacing:.4px;text-decoration:none}
+  .brand b{color:var(--gold);font-weight:normal}
+  .ed-pill{display:inline-block;background:var(--gold);color:var(--navy);font-family:var(--sans);font-weight:800;font-size:.62rem;letter-spacing:.6px;text-transform:uppercase;padding:4px 11px;border-radius:20px;margin-left:9px;vertical-align:middle;white-space:nowrap}
+  @media(max-width:640px){.ed-pill{display:none}}
+  .hbar .btn{padding:11px 22px;font-size:.92rem;box-shadow:none}
+
+  /* hero */
+  .hero{background:var(--cream);color:var(--ink);padding:70px 0 80px;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+  .hero h1{color:var(--navy);font-size:3rem;margin-bottom:18px}
+  .hero p.lead{font-size:1.22rem;color:#55524b;margin-bottom:30px;max-width:540px}
+  .hero .cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .hero .trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:26px;color:#6f6a5c;font-size:.92rem}
+  .hero .trust span{display:flex;align-items:center;gap:7px}
+  .hero .trust .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .cover-shot{position:relative;text-align:center}
+  .cover-shot img{width:84%;max-width:360px;border-radius:6px;box-shadow:0 26px 60px rgba(0,0,0,.45);border:1px solid rgba(200,162,75,.4)}
+  .flag{position:absolute;top:-22px;right:12px;background:var(--gold);color:var(--navy);font-weight:800;font-size:1.05rem;
+    letter-spacing:.5px;padding:12px 24px;border-radius:30px;font-family:var(--sans);box-shadow:0 10px 24px rgba(0,0,0,.32)}
+
+  /* sections */
+  section{padding:78px 0}
+  .band{background:var(--white)}
+  .band-navy{background:var(--navy);color:var(--cream)}
+  .band-navy h2{color:#fff}
+  h2.sec{font-size:2.15rem;margin-bottom:6px}
+  .sub{font-size:1.12rem;color:#55524b;max-width:680px}
+  .band-navy .sub{color:#d2cdbe}
+
+  /* problem */
+  .problem{background:var(--navy);color:var(--cream);text-align:center;padding:64px 0}
+  .problem h2{color:#fff;font-size:2.1rem;max-width:780px;margin:0 auto 16px}
+  .problem p{color:#cfc9ba;font-size:1.12rem;max-width:660px;margin:0 auto}
+
+  /* value vs attorney */
+  .value{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white)}
+  .value>div{padding:38px 34px}
+  .value .vs-them{background:#faf6ee;border-right:1px solid var(--line)}
+  .value .vs-us{background:var(--white)}
+  .value .amt{font-family:var(--serif);font-size:2.4rem;color:var(--navy);margin:6px 0 4px}
+  .value .vs-them .amt{color:#9a8f7c}
+  .value h4{font-size:1.05rem;margin-bottom:4px}
+
+  /* features grid */
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:42px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:30px 26px;transition:box-shadow .2s,transform .2s}
+  .card:hover{box-shadow:0 14px 34px rgba(27,33,80,.10);transform:translateY(-3px)}
+  .card .ic{width:42px;height:42px;border-radius:9px;background:rgba(200,162,75,.16);display:flex;align-items:center;justify-content:center;
+    color:var(--gold-d);font-weight:800;font-family:var(--serif);font-size:1.2rem;margin-bottom:16px}
+  .card h4{font-size:1.18rem;margin-bottom:8px}
+  .card p{color:#5b574f;font-size:.97rem}
+
+  /* split (image + text) */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  .split img{width:100%;border-radius:8px;box-shadow:0 20px 50px rgba(27,33,80,.20);border:1px solid var(--line)}
+  .split h2{font-size:2.1rem;margin-bottom:6px}
+  .split p{color:#d2cdbe;font-size:1.08rem;margin-top:14px}
+  .band-navy .split p{color:#d2cdbe}
+
+  /* formats */
+  .formats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:42px}
+  .fmt{text-align:center;padding:30px 22px;border:1px solid var(--line);border-radius:12px;background:#fbf8f1}
+  .fmt .tag{font-family:var(--sans);font-weight:800;color:var(--gold-d);font-size:.74rem;letter-spacing:1.5px;text-transform:uppercase}
+  .fmt h4{font-size:1.22rem;margin:8px 0 8px}
+  .fmt p{color:#5b574f;font-size:.96rem}
+
+  /* personas */
+  .persona{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:42px}
+  .persona .p{background:var(--white);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:28px 26px;box-shadow:0 8px 22px rgba(27,33,80,.07)}
+  .persona h4{font-size:1.16rem;margin-bottom:8px}
+  .persona p{color:#5b574f;font-size:.97rem}
+
+  /* founder */
+  .founder{background:#faf6ee;border:1px solid var(--line);border-radius:14px;padding:46px 44px;text-align:center;max-width:780px;margin:0 auto}
+  .founder p.q{font-family:var(--serif);font-size:1.5rem;color:var(--navy);line-height:1.4;margin-bottom:18px}
+  .founder .sig{color:var(--sage);font-weight:600;letter-spacing:.3px}
+
+  /* guarantee */
+  .guar{display:flex;gap:26px;align-items:center;background:var(--navy);color:var(--cream);border-radius:14px;padding:38px 40px;max-width:840px;margin:0 auto}
+  .guar .seal{flex:0 0 96px;width:96px;height:96px;border-radius:50%;border:3px solid var(--gold);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;color:var(--gold);font-family:var(--serif);text-align:center;line-height:1.05}
+  .guar .seal b{font-size:1.7rem}.guar .seal span{font-size:.62rem;letter-spacing:1px;text-transform:uppercase}
+  .guar h3{color:#fff;font-size:1.4rem;margin-bottom:6px}
+  .guar p{color:#cfc9ba;font-size:1rem}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line);padding:20px 4px}
+  details summary{font-family:var(--serif);font-size:1.18rem;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:'+';color:var(--gold-d);font-weight:700;font-size:1.5rem;line-height:1}
+  details[open] summary::after{content:'–'}
+  details p{margin-top:12px;color:#55524b;font-size:1.02rem}
+
+  /* final cta */
+  .final{background:linear-gradient(160deg,#1B2150,#252c63);color:var(--cream);text-align:center;padding:84px 0}
+  .final h2{color:#fff;font-size:2.5rem;max-width:760px;margin:0 auto 16px}
+  .final p{color:#d2cdbe;font-size:1.15rem;max-width:560px;margin:0 auto 32px}
+  .final .micro{color:#b8b2a3;margin-top:18px}
+
+  /* footer */
+  footer{background:#15193f;color:#a9a596;font-size:.9rem;padding:50px 0 40px}
+  footer .fbar{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  footer a{color:#cfc9ba;text-decoration:none;margin-right:18px}
+  footer a:hover{color:var(--gold)}
+  footer .disc{max-width:620px;font-size:.8rem;color:#7d7a6e;margin-top:22px;line-height:1.6}
+  .fbrand{font-family:var(--serif);color:var(--cream);font-size:1.1rem}
+
+  @media(max-width:860px){
+    .hero-grid,.split,.value{grid-template-columns:1fr}
+    .feat,.formats,.persona{grid-template-columns:1fr}
+    .hero{padding:48px 0 56px}.hero h1{font-size:2.2rem}
+    .cover-shot{order:-1;margin-bottom:10px}.cover-shot img{max-width:260px}
+    h2.sec,.split h2,.problem h2{font-size:1.7rem}.final h2{font-size:1.9rem}
+    .value .vs-them{border-right:none;border-bottom:1px solid var(--line)}
+    .guar{flex-direction:column;text-align:center}
+    section{padding:56px 0}
+    .hbar .brand{font-size:1rem}
+  }
+
+  /* estate check quiz */
+  .erq-section{padding:64px 0 88px}
+  .erq-card{background:var(--cream);border-radius:18px;max-width:640px;margin:0 auto;padding:48px 46px;
+    box-shadow:0 30px 70px rgba(0,0,0,.32);border:1px solid rgba(200,162,75,.35);text-align:center;min-height:340px;
+    display:flex;flex-direction:column;justify-content:center}
+  .erq-h{font-family:var(--serif);color:var(--navy);font-size:2rem;line-height:1.22;margin-bottom:14px;font-weight:normal}
+  .erq-sub{color:#55524b;font-size:1.08rem;max-width:520px;margin:0 auto 22px;line-height:1.6}
+  .erq-btn{display:inline-block;background:var(--gold);color:var(--navy);font-family:var(--sans);font-weight:700;
+    border:none;cursor:pointer;padding:17px 40px;border-radius:6px;font-size:1.08rem;text-decoration:none;
+    box-shadow:0 8px 22px rgba(27,33,80,.20);transition:transform .15s,box-shadow .15s;margin-top:4px}
+  .erq-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(27,33,80,.28)}
+  .erq-btn:disabled{opacity:.55;cursor:default;transform:none;box-shadow:none}
+  .erq-brand{font-family:var(--sans);text-transform:uppercase;letter-spacing:2px;font-size:.72rem;font-weight:700;color:var(--gold-d);margin-bottom:14px}
+  .erq-prog{height:6px;background:#e4dccb;border-radius:6px;overflow:hidden;margin:0 auto 28px;max-width:420px}
+  .erq-bar{height:100%;background:var(--gold);border-radius:6px;transition:width .35s ease}
+  .erq-q{font-family:var(--serif);color:var(--navy);font-size:1.5rem;line-height:1.35;margin:0 auto 28px;max-width:520px}
+  .erq-opt{display:block;width:100%;max-width:420px;margin:0 auto 12px;background:var(--white);border:1.5px solid var(--line);
+    color:var(--navy);font-family:var(--sans);font-weight:600;font-size:1.02rem;padding:15px 20px;border-radius:8px;cursor:pointer;
+    transition:border-color .15s,background .15s,transform .1s}
+  .erq-opt:hover{border-color:var(--gold);background:#fbf6ea;transform:translateY(-1px)}
+  .erq-score{font-family:var(--serif);font-size:4rem;color:var(--navy);line-height:1;margin:4px 0 2px}
+  .erq-gap{background:var(--white);border-left:3px solid var(--gold);text-align:left;padding:12px 16px;border-radius:6px;
+    margin:8px auto;max-width:470px;color:#3a3a42;font-size:.98rem}
+  .erq-in{display:block;width:100%;max-width:420px;margin:0 auto 12px;padding:14px 16px;border:1.5px solid var(--line);
+    border-radius:8px;font-size:1rem;font-family:var(--sans);color:var(--ink)}
+  .erq-in:focus{outline:none;border-color:var(--gold)}
+  .erq-disc{font-size:.78rem;color:#8a8578;margin-top:22px;line-height:1.55;max-width:480px;margin-left:auto;margin-right:auto}
+  @media(max-width:640px){.erq-card{padding:34px 22px;border-radius:14px}.erq-h{font-size:1.5rem}.erq-q{font-size:1.25rem}.erq-score{font-size:3rem}}
+</style>
+</head><body>
+<header>
+  <div class="hbar">
+    <a href="#top" class="brand">The Estate <b>Organizer</b><span class="ed-pill">🇺🇸 American Edition</span></a>
+    <a href="https://www.theestateorganiser.com.au/offers/o2iGg6jk/checkout" class="btn">Get the book</a>
+  </div>
+</header>
+<a id="top"></a>
+<section class="band-navy erq-section"><span id="erq-anchor" style="position:absolute;margin-top:-90px"></span><div class="wrap">
+  <div class="erq-card" id="erq-card"></div>
+</div></section>
+<footer>
+  <div class="wrap">
+    <div class="fbar">
+      <div>
+        <div class="fbrand">The Estate Organizer 🇺🇸</div>
+        <div style="margin-top:6px">What your family will need, in one place.</div>
+      </div>
+      <div>
+        <a href="#top">Get the book</a>
+        <a href="https://www.theestateorganiser.com.au/privacy-policy">Privacy</a>
+        <a href="https://www.theestateorganiser.com.au/terms-of-service">Terms</a>
+        <a href="https://www.theestateorganiser.com.au/refund-policy">Refunds</a>
+      </div>
+    </div>
+    <p class="disc">The Estate Organizer is an information-gathering and record-keeping tool. It is not legal, financial or tax advice, and it is not a Will, Power of Attorney, or any other legal document. Estate planning rules vary by state and change over time; consult a qualified attorney, accountant or financial advisor for advice specific to your circumstances.<br><br>© 2026 Prestige Worldwright Pty Ltd. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var RELAY="https://eo-capture-relay-production.up.railway.app/capture";
+  var MARKET="us";
+  var TOOLKIT="/toolkit/Executor-Toolkit-The-Estate-Organizer.pdf";
+  var DISC="Educational content only. Not legal, financial or tax advice. Estate laws vary from state to state. Always consult a qualified professional about your specific situation.";
+  var Q=[{"q": "Could your family quickly find your will if they needed it tomorrow?", "gap": "Where your will is kept"}, {"q": "Is there one place your family could find all your bank accounts, retirement accounts and insurance?", "gap": "A single place that lists your accounts, retirement savings and insurance"}, {"q": "Have you checked the beneficiaries on your retirement accounts (401(k), IRA) and life insurance in the last few years, and are they current?", "gap": "Your beneficiary designations on retirement accounts and life insurance"}, {"q": "Have you set up safe access to your important online accounts and photos (a password manager, or the legacy settings on your phone)?", "gap": "Safe access to your digital accounts and photos"}, {"q": "Have you talked with your family about what you would want?", "gap": "The conversation with your family"}, {"q": "Is there someone able to act for you if you could not manage your own affairs, plus someone named to make medical decisions (a power of attorney and a health care directive)?", "gap": "A power of attorney, and someone named for medical decisions"}];
+  var ans=[];
+  var card=document.getElementById("erq-card");
+  function up(){ try{ document.getElementById("erq-anchor").scrollIntoView({behavior:"smooth",block:"start"}); }catch(e){ window.scrollTo(0,0); } }
+  function intro(){
+    card.innerHTML='<div class="erq-brand">The 2-minute Estate Check</div><h1 class="erq-h">How ready is your family if something happened tomorrow?</h1><p class="erq-sub">Six quick questions, about two minutes. No right or wrong answers, just an honest picture of where things stand. At the end you can grab a free toolkit to close any gaps.</p><button class="erq-btn" id="erq-start">Start the 2-minute check</button><div class="erq-disc">'+DISC+'</div>';
+    document.getElementById("erq-start").onclick=function(){question(0);up();};
+  }
+  function question(i){
+    var q=Q[i];var pct=Math.round((i/Q.length)*100);
+    card.innerHTML='<div class="erq-brand">Question '+(i+1)+' of '+Q.length+'</div><div class="erq-prog"><div class="erq-bar" style="width:'+pct+'%"></div></div><div class="erq-q">'+q.q+'</div><button class="erq-opt" data-v="2">Yes</button><button class="erq-opt" data-v="1">Not sure</button><button class="erq-opt" data-v="0">No, or not yet</button>';
+    var opts=card.querySelectorAll(".erq-opt");
+    for(var k=0;k<opts.length;k++){opts[k].onclick=function(){ans[i]=parseInt(this.getAttribute("data-v"),10);if(i+1<Q.length){question(i+1);}else{results();}up();};}
+  }
+  function results(){
+    var score=0;for(var s=0;s<ans.length;s++){score+=ans[s];}
+    var gaps=[];for(var i=0;i<Q.length;i++){if(ans[i]<2)gaps.push(Q[i].gap);}
+    var msg;if(score>=9){msg="You are more organised than many families. There may still be a gap or two worth closing.";}else if(score>=5){msg="A solid start, with some important gaps still to close.";}else{msg="Like a lot of families, there is real work to do here. The good news: that is exactly what the free toolkit is for.";}
+    var gh="";if(gaps.length){gh='<p class="erq-sub" style="margin-bottom:10px"><strong>Worth a look:</strong></p>';for(var g=0;g<gaps.length;g++){gh+='<div class="erq-gap">'+gaps[g]+'</div>';}}
+    card.innerHTML='<div class="erq-brand">Your result</div><div class="erq-score">'+score+'<span style="font-size:1.4rem;color:#9a9a9a">/12</span></div><p class="erq-sub" style="margin-top:6px">'+msg+'</p>'+gh+'<h2 class="erq-h" style="font-size:1.5rem;margin-top:28px">Get the free Executor Toolkit to close the gaps</h2><p class="erq-sub">A step-by-step roadmap for getting organised, with notification letters and a simple tracker. We will email it to you along with your results.</p><input class="erq-in" id="erq-name" type="text" placeholder="First name" autocomplete="given-name"><input class="erq-in" id="erq-email" type="email" placeholder="Email address" autocomplete="email" inputmode="email"><button class="erq-btn" id="erq-submit">Send me the free Toolkit</button><div id="erq-err" style="color:#b23;font-size:14px;margin-top:10px;display:none"></div><div class="erq-disc">'+DISC+'</div>';
+    document.getElementById("erq-submit").onclick=submit;
+    document.getElementById("erq-email").addEventListener("keydown",function(e){if(e.key==="Enter")submit();});
+    up();
+  }
+  var sent=false;
+  function submit(){
+    var email=(document.getElementById("erq-email").value||"").trim();
+    var name=(document.getElementById("erq-name").value||"").trim();
+    var err=document.getElementById("erq-err");
+    if(!name){document.getElementById("erq-name").focus();return;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){err.textContent="Please enter a valid email address.";err.style.display="block";return;}
+    var btn=document.getElementById("erq-submit");btn.textContent="Sending...";btn.disabled=true;
+    var to=setTimeout(done,5000);
+    fetch(RELAY,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({market:MARKET,name:name,email:email})})
+      .then(function(r){return r.json();}).then(function(){clearTimeout(to);done();})
+      .catch(function(){clearTimeout(to);done();});
+  }
+  function done(){
+    if(sent)return;sent=true;try{fbq("track","Lead");}catch(e){}
+    card.innerHTML='<div class="erq-brand">All set</div><h2 class="erq-h" style="font-size:1.7rem">Your Executor Toolkit is on its way</h2><p class="erq-sub">We have emailed it to you along with your results. You can also download it right now.</p><a class="erq-btn" href="'+TOOLKIT+'" download>Download the free Toolkit</a><div class="erq-disc">'+DISC+'</div>';
+    up();
+  }
+  intro();
+})();
+</script>
+
+</body></html>
