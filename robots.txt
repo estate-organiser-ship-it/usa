@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://theestateorganiser.com/sitemap.xml
