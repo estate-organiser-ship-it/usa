@@ -119,7 +119,7 @@
         <div class="eyebrow" style="color:var(--gold-d)">🇺🇸 A free guide from The Estate Organizer</div>
         <h1>The Free Executor Toolkit</h1>
         <p class="lead">Being the executor is hard enough. This free guide gives you a clear path through the first days and the months that follow, so nothing important gets missed.</p>
-        <form id="optin" class="optin-form" action="https://www.theestateorganiser.com.au/forms/2149642647/form_submissions" method="POST" target="kajabi_sink" novalidate>
+        <form id="optin" class="optin-form" action="#" method="POST" novalidate>
           <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name">
           <input type="email" name="form_submission[email]" placeholder="Your email address" autocomplete="email">
           <button type="submit" class="btn btn-lg">Send me the free toolkit</button>
@@ -196,7 +196,7 @@
     <div class="wrap">
       <h2>Give the people you love a clear path.</h2>
       <p>Enter your email and I will send the free Executor Toolkit straight to you.</p>
-      <form id="optin2" class="optin-form" action="https://www.theestateorganiser.com.au/forms/2149642647/form_submissions" method="POST" target="kajabi_sink" novalidate>
+      <form id="optin2" class="optin-form" action="#" method="POST" novalidate>
         <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name">
         <input type="email" name="form_submission[email]" placeholder="Your email address" autocomplete="email">
         <button type="submit" class="btn btn-lg">Send me the free toolkit</button>
@@ -226,7 +226,8 @@
 <script>
   var PDF_URL = "Executor-Toolkit-The-Estate-Organizer.pdf";   // hosted in /toolkit/
   var delivered = false, posted = false;
-  function showDone(){
+  var RELAY='https://eo-capture-relay-production.up.railway.app/capture'; var MARKET='us';
+      function showDone(){
     if(delivered) return; delivered = true;
     document.getElementById('dl').setAttribute('href', PDF_URL);
     var forms = document.querySelectorAll('.optin-form');
@@ -246,8 +247,12 @@
       var emEl = frm.querySelector('input[type=email]'); var em = emEl ? emEl.value.trim() : '';
       if(!nm){ e.preventDefault(); if(nmEl){ nmEl.focus(); } return; }
       if(!em || em.indexOf('@') < 1){ e.preventDefault(); if(emEl){ emEl.focus(); } return; }
-      posted = true;                // allow the native submit into kajabi_sink
-      setTimeout(showDone, 3500);   // fallback so the visitor always gets the download
+      e.preventDefault(); posted = true;
+        var _to = setTimeout(showDone, 5000);
+        fetch(RELAY,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({market:MARKET,name:nm,email:em})})
+          .then(function(r){return r.json();})
+          .then(function(){ clearTimeout(_to); showDone(); })
+          .catch(function(){ clearTimeout(_to); showDone(); });
     });
   }
   wire('optin'); wire('optin2');
