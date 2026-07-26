@@ -267,6 +267,7 @@
   var RELAY='https://eo-capture-relay-production.up.railway.app/capture'; var MARKET='us';
       function showDone(){
     if(delivered) return; delivered = true;
+    try{fbq('track','Lead');}catch(e){}
     document.getElementById('dl').setAttribute('href', PDF_URL);
     var forms = document.querySelectorAll('.optin-form');
     for(var i=0;i<forms.length;i++){ forms[i].style.display='none'; }
