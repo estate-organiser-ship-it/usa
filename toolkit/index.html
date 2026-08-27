@@ -266,7 +266,34 @@
   var PDF_URL = "Executor-Toolkit-The-Estate-Organizer.pdf";   // hosted in /toolkit/
   var delivered = false, posted = false;
   var RELAY='https://eo-capture-relay-production.up.railway.app/capture'; var MARKET='us';
-      function showDone(){
+      function eoShowFail(){
+    var all=document.querySelectorAll('button'), btn=null;
+    for(var i=0;i<all.length;i++){ if(all[i].disabled){ btn=all[i]; break; } }
+    if(btn){
+      btn.disabled=false;
+      if(btn.dataset && btn.dataset.t){ btn.textContent=btn.dataset.t; }
+      else if(/one moment|sending/i.test(btn.textContent||'')){ btn.textContent='Try again'; }
+    }
+    var slot=document.getElementById('erq-err');
+    if(slot){
+      slot.textContent='That did not go through. Please check the email address and try again. If it still will not work, email hello@theestateorganiser.com.au and we will add you by hand.';
+      slot.style.display='block';
+      try{ slot.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){}
+      return;
+    }
+    var box=document.getElementById('eo-capture-error');
+    if(!box){
+      box=document.createElement('div'); box.id='eo-capture-error'; box.setAttribute('role','alert');
+      box.style.cssText='margin:14px 0;padding:14px 16px;border:1px solid #C8A24B;border-left:4px solid #C8A24B;border-radius:6px;background:#fff8e6;color:#2c3038;font-size:.98rem;line-height:1.55;max-width:560px;text-align:left';
+      box.innerHTML='<strong>That did not go through.</strong> Please check the email address and try again. If it still will not work, email <a href="mailto:hello@theestateorganiser.com.au" style="color:#1B2150">hello@theestateorganiser.com.au</a> and we will add you to the list by hand.';
+      var anchor=btn||document.querySelector('form');
+      if(anchor&&anchor.parentNode){ anchor.parentNode.insertBefore(box,anchor.nextSibling); }
+      else { document.body.appendChild(box); }
+    }
+    box.style.display='block';
+    try{ box.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){}
+  }
+  function showDone(){ var eb=document.getElementById('eo-capture-error'); if(eb) eb.style.display='none'; var es=document.getElementById('erq-err'); if(es) es.style.display='none';
     if(delivered) return; delivered = true;
     try{fbq('track','Lead');}catch(e){}
     document.getElementById('dl').setAttribute('href', PDF_URL);
@@ -288,11 +315,11 @@
       if(!nm){ e.preventDefault(); if(nmEl){ nmEl.focus(); } return; }
       if(!em || em.indexOf('@') < 1){ e.preventDefault(); if(emEl){ emEl.focus(); } return; }
       e.preventDefault(); posted = true;
-        var _to = setTimeout(showDone, 5000);
-        fetch(RELAY,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({market:MARKET,name:nm,email:em})})
-          .then(function(r){return r.json();})
-          .then(function(){ clearTimeout(_to); showDone(); })
-          .catch(function(){ clearTimeout(_to); showDone(); });
+        var eoCtl=('AbortController' in window)?new AbortController():null;
+      var _to=setTimeout(function(){ if(eoCtl){ try{eoCtl.abort();}catch(e){} } },15000);
+        fetch(RELAY,{signal:(eoCtl?eoCtl.signal:undefined),method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({market:MARKET,name:nm,email:em})})
+          .then(function(r){ return r.text().then(function(t){ var b=null; try{ b=JSON.parse(t); }catch(e){} return { ok: r.ok && (!b || b.ok !== false) }; }); }).then(function(res){ clearTimeout(_to); if(res.ok){ showDone(); } else { eoShowFail(); } })
+          .catch(function(){ clearTimeout(_to); eoShowFail(); });
     });
   }
   wire('optin'); wire('optin2');
