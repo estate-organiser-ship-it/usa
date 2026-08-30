@@ -304,7 +304,7 @@ details{border-bottom:1px solid rgba(27,33,80,.12)}
   .tm-card{flex:1 1 400px;max-width:460px;text-align:left;background:var(--navy);color:var(--cream);padding:24px 26px;border-radius:14px;box-shadow:0 14px 32px rgba(27,33,80,.22)}
   .tm-mark{font-family:Georgia,serif;font-size:46px;line-height:.55;color:var(--gold)}
   .tm-q{font-style:italic;font-size:1.05rem;line-height:1.55;margin:8px 0 14px}
-  .tm-name{font-family:var(--sans);text-transform:uppercase;letter-spacing:1.5px;font-size:.72rem;font-weight:700;color:var(--gold)}.tm-lead{max-width:700px;margin:0 auto 36px;text-align:center}.tm-lead-setup{font-family:var(--sans);font-size:.98rem;line-height:1.6;color:var(--ink);margin:0 0 16px}.tm-lead-q{font-family:var(--serif);font-style:italic;font-size:1.65rem;line-height:1.35;color:var(--navy);margin:0 0 12px}.tm-lead-name{font-family:var(--sans);text-transform:uppercase;letter-spacing:1.5px;font-size:.72rem;font-weight:700;color:var(--gold-d)}@media(max-width:600px){.tm-lead-q{font-size:1.3rem}}
+  .tm-name{font-family:var(--sans);text-transform:uppercase;letter-spacing:1.5px;font-size:0.9rem;font-weight:700;color:var(--gold)}.tm-lead{max-width:700px;margin:0 auto 36px;text-align:center}.tm-lead-setup{font-family:var(--sans);font-size:.98rem;line-height:1.6;color:var(--ink);margin:0 0 16px}.tm-lead-q{font-family:var(--serif);font-style:italic;font-size:1.65rem;line-height:1.35;color:var(--navy);margin:0 0 12px}.tm-lead-name{font-family:var(--sans);text-transform:uppercase;letter-spacing:1.5px;font-size:.72rem;font-weight:700;color:var(--gold-d)}@media(max-width:600px){.tm-lead-q{font-size:1.3rem}}
 </style>
 <section class="band">
   <div class="wrap center">
@@ -416,6 +416,15 @@ details{border-bottom:1px solid rgba(27,33,80,.12)}
     <p style="margin-top:10px;font-size:14px;opacity:.8">30 days to change your mind.</p>
   </div>
 </section>
+<!-- secondary asks: relocated here so the closing stretch carries a single $79 ask -->
+<section class="band" style="background:#efe7d5"><div class="wrap center">
+  <div class="eyebrow">Not ready today?</div>
+  <h2 class="sec" style="font-size:1.6rem">Take the free Executor Toolkit with you.</h2>
+  <p style="color:#55524b;max-width:560px;margin:10px auto 22px">A Day 1 to Month 12 roadmap, the common costly mistakes, and notification letters. Keep it for the day your family needs it.</p>
+  <a class="btn" href="/toolkit/">Get the free toolkit</a>
+  <div class="micro" style="margin-top:12px">Free. Instant. No card needed.</div>
+  <p class="micro" style="margin-top:20px;color:#55524b">Prefer to start smaller? <a href="/the-estate-conversation-kit/" style="color:inherit;text-decoration:underline">The $27 Conversation Kit</a></p>
+</div></section>
 <section class="band"><div class="wrap center">
   <div class="eyebrow">A note from Will</div>
   <h2 class="sec">Why I made this, in under a minute.</h2>
@@ -440,16 +449,8 @@ details{border-bottom:1px solid rgba(27,33,80,.12)}
     <p>One document. Done once, updated yearly. Quietly, it might be the kindest thing you ever leave behind.</p>
     <a href="https://checkout.theestateorganiser.com/c8202684" class="btn btn-lg">Get The Estate Organizer, $79</a>
     <div class="micro">🇺🇸 The American Edition · $79 USD, one-time · Instant download · 30-day money-back guarantee</div>
-  <p class="micro" style="margin-top:20px;color:#b8b2a3">Prefer to start smaller? <a href="/the-estate-conversation-kit/" style="color:inherit;text-decoration:underline">The $27 Conversation Kit</a></p></div>
+  </div>
 </section>
-
-<section class="band" style="background:#efe7d5"><div class="wrap center">
-  <div class="eyebrow">Not ready today?</div>
-  <h2 class="sec" style="font-size:1.6rem">Take the free Executor Toolkit with you.</h2>
-  <p style="color:#55524b;max-width:560px;margin:10px auto 22px">A Day 1 to Month 12 roadmap, the common costly mistakes, and notification letters. Keep it for the day your family needs it.</p>
-  <a class="btn" href="/toolkit/">Get the free toolkit</a>
-  <div class="micro" style="margin-top:12px">Free. Instant. No card needed.</div>
-</div></section>
 <footer>
   <div class="wrap">
     <div class="fbar">
@@ -487,7 +488,7 @@ details{border-bottom:1px solid rgba(27,33,80,.12)}
 <script>
 (function(){
   try{fbq('track','ViewContent',{content_name:'The Estate Organizer'});}catch(e){}
-  document.querySelectorAll('a[href*="/offers/"]').forEach(function(a){
+  document.querySelectorAll('a[href*="checkout.theestateorganiser"]').forEach(function(a){
     a.addEventListener('click',function(){ try{fbq('track','InitiateCheckout',{content_name:'The Estate Organizer'});}catch(e){} });
   });
   var bar=document.getElementById('eo-sticky');
