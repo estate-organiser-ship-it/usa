@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Estate Organizer</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="canonical" href="https://theestateorganiser.com/the-estate-organizer/">
+<script>
+  // The QR on the back of the printed book lands here. Tag the visit so a sale
+  // from a book someone passed on is tellable apart from an ad or the newsletter,
+  // then hand straight over to the sales page. ?s= says which surface was scanned
+  // (bc = back cover), so placements stay separable later.
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search);
+      var u = new URL("https://theestateorganiser.com/the-estate-organizer/");
+      u.searchParams.set("utm_source", "book");
+      u.searchParams.set("utm_medium", "print");
+      u.searchParams.set("utm_campaign", "book-qr");
+      u.searchParams.set("utm_content", p.get("s") || "bc");
+      location.replace(u.toString());
+    } catch (e) {
+      location.replace("https://theestateorganiser.com/the-estate-organizer/");
+    }
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://theestateorganiser.com/the-estate-organizer/"></noscript>
+<style>
+  :root{--navy:#1B2150;--cream:#F2EBDC;--gold:#C8A24B}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--navy);color:var(--cream);min-height:100vh;display:flex;
+    align-items:center;justify-content:center;text-align:center;padding:32px;
+    font-family:Georgia,'Times New Roman',serif;line-height:1.6}
+  .rule{width:56px;height:3px;background:var(--gold);border:0;margin:20px auto 22px}
+  h1{font-size:1.6rem;font-weight:normal}
+  p{color:#cfc9ba;margin-top:10px}
+  a{color:var(--navy);background:var(--gold);text-decoration:none;display:inline-block;
+    margin-top:26px;padding:15px 32px;border-radius:6px;font-family:-apple-system,
+    BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700}
+</style>
+</head>
+<body>
+  <main>
+    <h1>The Estate Organizer &#127482;&#127480;</h1>
+    <hr class="rule">
+    <p>Taking you there now.</p>
+    <a href="https://theestateorganiser.com/the-estate-organizer/">Continue</a>
+  </main>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
+</body>
+</html>
