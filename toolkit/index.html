@@ -289,7 +289,7 @@
   }
   function showDone(){ var eb=document.getElementById('eo-capture-error'); if(eb) eb.style.display='none'; var es=document.getElementById('erq-err'); if(es) es.style.display='none';
     if(delivered) return; delivered = true;
-    try{fbq('track','Lead');}catch(e){}
+    try{fbq('track','Lead');}catch(e){}try{gtag('event','generate_lead');}catch(e){}
     document.getElementById('dl').setAttribute('href', PDF_URL);
     var forms = document.querySelectorAll('.optin-form');
     for(var i=0;i<forms.length;i++){ forms[i].style.display='none'; }

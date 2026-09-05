@@ -324,7 +324,7 @@
     try{ box.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){}
   }
   function done(){ var eb=document.getElementById('eo-capture-error'); if(eb) eb.style.display='none'; var es=document.getElementById('erq-err'); if(es) es.style.display='none';
-    if(sent)return;sent=true;try{fbq("track","Lead");}catch(e){}
+    if(sent)return;sent=true;try{fbq("track","Lead");}catch(e){}try{gtag('event','generate_lead');}catch(e){}
     card.innerHTML='<div class="erq-brand">All set</div><h2 class="erq-h" style="font-size:1.7rem">Your Executor Toolkit is on its way</h2><p class="erq-sub">We have emailed it to you along with your results. You can also download it right now.</p><a class="erq-btn" href="'+TOOLKIT+'" download>Download the free Toolkit</a>'+offerHtml()+'<div class="erq-disc">'+DISC+'</div>';
     up();
   }
