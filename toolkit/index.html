@@ -317,5 +317,13 @@
   }
   wire('optin'); wire('optin2');
 </script>
+<script>/* lead source, 5 Sep 2026: remembers where a visit came from and sends it with the email a lead already typed. Nothing visible. */
+(function(){try{var K='eo_src',CAP='https://eo-cart-capture-production.up.railway.app/capture';var q=new URLSearchParams(location.search);var u=['utm_source','utm_medium','utm_campaign','utm_content'].map(function(k){return q.get(k)}).filter(Boolean).join('/');var rh='';try{rh=document.referrer?new URL(document.referrer).hostname.replace(/^www\./,''):''}catch(e){}var own=/theestateorganiser\./.test(rh);var s='';if(q.get('fbclid')||/^(fb|ig|facebook|instagram|meta)$/i.test(q.get('utm_source')||''))s='meta-ad';else if(q.get('ttclid'))s='tiktok-ad';else if(q.get('gclid'))s='google-ad';else if(/instagram\.com$/.test(rh))s='instagram';else if(/tiktok\.com$/.test(rh))s='tiktok';else if(/facebook\.com$|^fb\.me$|^m\.me$/.test(rh))s='facebook';else if(/youtube\.com$|^youtu\.be$/.test(rh))s='youtube';else if(/google\./.test(rh))s='google';else if(/pinterest\./.test(rh))s='pinterest';else if(/manychat|mcht/.test(rh))s='manychat';else if(rh&&!own)s=rh;var have='';try{have=sessionStorage.getItem(K)||''}catch(e){}if(!have||(s&&!own)||u){var v=(s||'direct')+(u?' | '+u:'')+' | '+location.pathname;try{sessionStorage.setItem(K,v)}catch(e){}}
+var sent={};function send(val){var src='';try{src=sessionStorage.getItem(K)||''}catch(e){}if(!src)src='direct | '+location.pathname;if(sent[val])return;sent[val]=1;setTimeout(function(){try{var b=JSON.stringify({kind:'source',email:val,source:src.slice(0,200)});if(navigator.sendBeacon){navigator.sendBeacon(CAP,new Blob([b],{type:'text/plain'}))}else{fetch(CAP,{method:'POST',body:b,keepalive:true,headers:{'Content-Type':'text/plain'}})}}catch(e){}},2500)}
+function emailNear(el){var n=el,i=0;while(n&&i<6){var em=n.querySelector&&n.querySelector('input[type=email]');if(em)return em;n=n.parentElement;i++}return null}
+document.addEventListener('submit',function(e){var f=e.target;var em=f&&f.querySelector?f.querySelector('input[type=email]'):null;if(em&&em.value&&em.value.indexOf('@')>0)send(em.value.trim().toLowerCase())},true);
+document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('button,.btn,input[type=submit]'):null;if(!t||t.closest('form'))return;var em=emailNear(t);if(em&&em.value&&em.value.indexOf('@')>0)send(em.value.trim().toLowerCase())},true);
+}catch(e){}})();</script>
+
 </body>
 </html>
