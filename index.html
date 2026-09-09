@@ -248,7 +248,15 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
 /* AU parity 9 Sep: hero figure treatment */
 .hero figure{margin:0}
 .hero figure img{width:100%;height:auto;border-radius:10px;box-shadow:0 18px 46px rgba(27,33,80,.18);display:block}
-.tiles.book .tile .bonus .b-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#3B6A99;font-weight:700;margin-bottom:4px}.tiles.book .tile .bonus .b-big{font-family:var(--serif);font-size:1.12rem;color:var(--navy);font-weight:700;line-height:1.25}.tiles.book .tile .bonus .b-val{color:#3B6A99;font-weight:700;margin-top:3px}.tiles.book .tile .bonus .ends{font-weight:800;color:var(--navy);margin-top:6px}</style>
+.tiles.book .tile .bonus .b-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#3B6A99;font-weight:700;margin-bottom:4px}.tiles.book .tile .bonus .b-big{font-family:var(--serif);font-size:1.12rem;color:var(--navy);font-weight:700;line-height:1.25}.tiles.book .tile .bonus .b-val{color:#3B6A99;font-weight:700;margin-top:3px}.tiles.book .tile .bonus .ends{font-weight:800;color:var(--navy);margin-top:6px}.btn-sub{display:inline}
+@media(max-width:600px){
+  .hbar .wrap{flex-wrap:nowrap;gap:8px;padding-top:8px;padding-bottom:8px;}
+  .hbar .logo img,.hbar .brand img,.hbar .brand-logo{height:30px !important;margin-right:6px !important;}
+  .ed-pill{font-size:.5rem;padding:4px 7px;margin-left:6px;letter-spacing:.08em;white-space:nowrap;}
+  .hbar .btn{margin-left:auto;padding:11px 16px;font-size:1rem;font-weight:800;}
+  .btn-sub{display:block;font-size:.85em;font-weight:600;margin-top:2px;}
+}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/", "logo": "https://theestateorganiser.com/assets/og-image.png", "description": "Fill-in-the-blanks workbooks that record your accounts, passwords, wishes and final instructions, so your family is not left guessing."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/"}</script><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D26NXBV715');</script>
@@ -278,7 +286,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       <h1>How ready is your family if something happened tomorrow?</h1>
       <p class="lead">Bank accounts. Passwords. Wishes. Retirement accounts you forgot you had. One place, before it is needed.</p>
       <div class="cta-row">
-        <a class="btn btn-lg" href="/estate-quiz/">Check how ready you are. Free, 2 minutes</a>
+        <a class="btn btn-lg" href="/estate-quiz/">Check how ready you are.<span class="btn-sub"> Free, 2 minutes</span></a>
       </div>
       <p class="quizline">Already know you want it? <a href="/the-estate-organizer/">See the book</a></p>
     </div>
