@@ -246,6 +246,10 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   .tiles.book .tile{grid-template-rows:none;grid-row:auto;display:flex;flex-direction:column}
   .tiles.book .tile .btn{align-self:stretch}
 }
+
+/* AU parity 9 Sep: hero figure treatment */
+.hero figure{margin:0}
+.hero figure img{width:100%;height:auto;border-radius:10px;box-shadow:0 18px 46px rgba(27,33,80,.18);display:block}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "The Estate Organizer", "image": "https://www.theestateorganiser.com/assets/og-image.png", "description": "A complete, fill-in-the-blanks workbook for your accounts, passwords, wishes and final instructions, so the people you love aren't left guessing. Built for American families. $79.", "brand": {"@type": "Brand", "name": "The Estate Organizer"}, "offers": {"@type": "Offer", "price": "79.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "#choose-format", "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "US", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 30, "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn", "merchantReturnLink": "https://www.theestateorganiser.com/refund-policy/"}, "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}, "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}}}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to fill in?", "acceptedAnswer": {"@type": "Answer", "text": "Most people work through it over a few weeks, not a weekend, one section at a time, when you've got the energy. There's no rush, and you can save and come back any time."}}, {"@type": "Question", "name": "Is my information safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's a file you fill in on your own computer, or print and fill in by hand. Nothing is stored online or in anyone's cloud, so there's nothing to be breached. Where you keep it is entirely up to you."}}, {"@type": "Question", "name": "Is this legal or financial advice?", "acceptedAnswer": {"@type": "Answer", "text": "No, and that's by design. The Estate Organizer is a place to record your information and wishes. It isn't a Will, and it doesn't replace your attorney or accountant. It simply makes sure that when your family needs those professionals, they can find everything fast. Rules vary from state to state, so confirm the specifics with your own advisors."}}, {"@type": "Question", "name": "Does it work in my state?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's about gathering your accounts, passwords, documents and wishes in one place, which matters everywhere. Where state-specific steps come up, it points you to the right professional rather than guessing for you."}}, {"@type": "Question", "name": "What exactly do I get?", "acceptedAnswer": {"@type": "Answer", "text": "Three files, delivered instantly: the digital fillable PDF, a printable edition, and the individual chapters so you can print just what you need. Updates are yours to keep."}}]}</script>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
@@ -287,10 +291,9 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
         <span><i class="dot"></i>One-time payment, no subscription</span>
       </div>
     </div>
-    <div class="cover-shot">
-      <span class="flag">&#127482;&#127480; American Edition</span>
-      <img src="/assets/us-book-cover.png" alt="The Estate Organizer, American Edition cover">
-    </div>
+    <figure>
+      <img src="/assets/hero-table.jpg" alt="The Estate Organizer, American Edition, on a kitchen table">
+    </figure>
   </div>
 </div>
 
@@ -582,7 +585,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
     <p class="deadline" style="margin-top:26px">The whole library, free with the printed book this September</p>
     <div class="tiles book" style="margin-top:34px">
       <div class="tile">
-        <img class="tileimg" src="/assets/tile-us-cover.jpg" alt="The Estate Organizer, digital edition">
+        <img class="tileimg" src="/assets/card-digital.jpg" alt="The Estate Organizer digital edition">
         <h4>Digital Edition</h4>
         <p class="t-price">$79 <span>USD</span></p>
         <p class="t-sub">Instant download</p>
@@ -593,7 +596,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
         <p class="micro">Digital version only, no physical book</p>
       </div>
       <div class="tile">
-        <img class="tileimg" src="/assets/tile-us-cover.jpg" alt="The Estate Organizer, printed edition">
+        <img class="tileimg" src="/assets/card-printed.jpg" alt="The printed Estate Organizer on a kitchen table">
         <h4>Printed Edition</h4>
         <p class="t-price">$139 <span>USD</span></p>
         <p class="t-sub">Free shipping in the United States</p>
@@ -604,7 +607,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
         <p class="micro">The printed book on its own</p>
       </div>
       <div class="tile featured">
-        <div class="tile-badge">Most people choose this</div><img class="tileimg" src="/assets/tile-us-cover.jpg" alt="The Estate Organizer, printed book and digital edition together">
+        <div class="tile-badge">Most people choose this</div><img class="tileimg" src="/assets/card-both.jpg" alt="The printed book and the digital edition together">
         <h4>Printed + Digital</h4>
         <p class="t-price">$149 <span>USD</span></p>
         <p class="t-sub">Free shipping, digital copy instantly</p>
@@ -654,7 +657,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       <p><strong>The digital edition</strong> carries a 30 day money back guarantee. Work through it, and if it isn&rsquo;t right for you, email us within 30 days for a full refund. No questions asked.</p>
       <p><strong>Printed books</strong> are printed to order, just for you, so change-of-mind refunds don&rsquo;t apply to them. If your book arrives damaged, misprinted or faulty in any way, we replace it free of charge. The only risk is leaving your family to guess.</p>
       <div class="sig">
-        <img src="/assets/will.jpg" alt="Will Kimak, creator of The Estate Organizer">
+        <img src="/assets/will-founder.jpg" alt="Will Kimak, creator of The Estate Organizer">
         <div>
           This guarantee is my personal promise to you.
           <b>Will Kimak</b>
