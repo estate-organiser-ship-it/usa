@@ -650,5 +650,7 @@ document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e
 }catch(e){}})();</script>
 
 
+<script>/* 12 Sep 2026 - carries the remembered traffic source across to the checkout link, so cold buyers get a lead_source too. Nothing visible. */
+(function(){try{document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href*="checkout.theestateorganiser."]'):null;if(!a)return;var s='';try{s=sessionStorage.getItem('eo_src')||''}catch(x){}if(!s)s='site '+location.pathname;var u=new URL(a.href);if(!u.searchParams.get('eo_src')){u.searchParams.set('eo_src',s.slice(0,200));a.href=u.toString()}},true)}catch(e){}})();</script>
 </body>
 </html>
