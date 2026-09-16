@@ -287,7 +287,7 @@
     }
     var slot=document.getElementById('erq-err');
     if(slot){
-      slot.textContent='That did not go through. Please check the email address and try again. If it still will not work, email hello@theestateorganiser.com.au and we will add you by hand.';
+      slot.textContent='That did not go through. Please check the email address and try again. If it still will not work, email hello@theestateorganiser.com and we will add you by hand.';
       slot.style.display='block';
       try{ slot.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){}
       return;
@@ -296,7 +296,7 @@
     if(!box){
       box=document.createElement('div'); box.id='eo-capture-error'; box.setAttribute('role','alert');
       box.style.cssText='margin:14px 0;padding:14px 16px;border:1px solid #C8A24B;border-left:4px solid #C8A24B;border-radius:6px;background:#fff8e6;color:#2c3038;font-size:.98rem;line-height:1.55;max-width:560px;text-align:left';
-      box.innerHTML='<strong>That did not go through.</strong> Please check the email address and try again. If it still will not work, email <a href="mailto:hello@theestateorganiser.com.au" style="color:#1B2150">hello@theestateorganiser.com.au</a> and we will add you to the list by hand.';
+      box.innerHTML='<strong>That did not go through.</strong> Please check the email address and try again. If it still will not work, email <a href="mailto:hello@theestateorganiser.com" style="color:#1B2150">hello@theestateorganiser.com</a> and we will add you to the list by hand.';
       var anchor=btn||document.querySelector('form');
       if(anchor&&anchor.parentNode){ anchor.parentNode.insertBefore(box,anchor.nextSibling); }
       else { document.body.appendChild(box); }
