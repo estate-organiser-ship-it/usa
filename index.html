@@ -261,6 +261,20 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   .btn-sub{display:block;font-size:.85em;font-weight:600;margin-top:2px;}
 }
 @media(max-width:600px){.hero .cta-row{justify-content:center;} .hero .cta-row .btn-lg{width:100%;text-align:center;box-sizing:border-box;} .hero .quizline{text-align:center;} .hero .eyebrow,.hero h1,.hero p.lead{text-align:left;}}
+
+/* verified review band + $149 card centred (19 Sep 2026) */
+.vband{display:flex;align-items:flex-start;gap:22px;flex-wrap:wrap;margin-top:30px;background:var(--white,#fff);border:1px solid var(--gold,#C8A24B);border-radius:12px;padding:24px 26px;box-shadow:0 0 0 2px rgba(200,162,75,.16);}
+.vband .vscore{flex:0 0 auto;text-align:center;}
+.vband .vnum{font-family:var(--serif,Georgia,serif);font-size:2.4rem;color:var(--navy,#1B2150);line-height:1;}
+.vband .vstars{color:var(--gold,#C8A24B);letter-spacing:2px;font-size:1rem;}
+.vband .vbody{flex:1 1 300px;}
+.vband .vtag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-d,#9a7a2e);border:1px solid var(--gold,#C8A24B);border-radius:6px;padding:3px 9px;margin-bottom:10px;}
+.vband p{font-size:.97rem;color:var(--muted,#5b574f);margin:0 0 10px;}
+.vband .who{font-size:.87rem;color:var(--sage,#7C8A6A);}
+.vband .who b{color:var(--navy,#1B2150);}
+.vband a{color:var(--gold-d,#9a7a2e);}
+@media(min-width:901px){.tiles.book .tile:nth-child(2){order:3;}.tiles.book .tile.featured{order:2;transform:scale(1.035);z-index:1;}}
+@media(max-width:900px){.tiles.book .tile.featured{order:-1;}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/", "logo": "https://theestateorganiser.com/assets/og-image.png", "description": "Fill-in-the-blanks workbooks that record your accounts, passwords, wishes and final instructions, so your family is not left guessing."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/"}</script><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
@@ -473,6 +487,15 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   <div class="wrap">
     <p class="eyebrow">What readers are saying</p>
     <h2 class="sec">In their own words.</h2>
+    <div class="vband">
+      <div class="vscore"><div class="vnum">5.0</div><div class="vstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div>
+      <div class="vbody">
+        <span class="vtag">Verified review on ProductReview</span>
+        <p>"This organiser is brilliant. There's details and ideas that I never would have thought of. It inspires you to look into your life in a different way so that your estate is well planned, easily understood, and not left for someone to work out all the unknown answers to estate related questions"</p>
+        <p class="who"><b>Wendy S.</b>, Australia. <a href="https://www.productreview.com.au/listings/the-estate-organiser" target="_blank" rel="noopener">Read it on ProductReview</a></p>
+      </div>
+    </div>
+
     <div class="reviews">
       <div class="rev">
         <h4>Beyond what she expected to get</h4>
