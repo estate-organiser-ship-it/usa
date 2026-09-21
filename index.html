@@ -320,6 +320,21 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   .lg-micro{color:var(--sage);font-size:.8rem;margin:9px 0 0;text-align:center}
   @media(max-width:900px){.legacy{grid-template-columns:1fr;gap:22px;padding:20px 16px}}
   @media(max-width:520px){.lg-quad{grid-template-columns:1fr}}
+
+  /* gift card, same family as the format cards */
+  .giftcard{background:var(--white);border:1px solid var(--line);border-radius:12px;
+            padding:22px 26px;margin-top:26px;display:flex;align-items:center;gap:24px;
+            flex-wrap:wrap;box-shadow:0 10px 26px rgba(27,33,80,.08)}
+  .giftcard h3{font-family:var(--serif);color:var(--navy);font-size:1.2rem;font-weight:normal;
+               margin:0 0 5px;line-height:1.2}
+  .giftcard p{color:var(--muted);margin:0;font-size:.94rem;max-width:580px}
+  .gc-cta{margin-left:auto}
+  .btn.gc-btn{background:transparent;border:1.5px solid var(--gold);box-shadow:none;
+              color:var(--navy);font-weight:700;padding:15px 30px;font-size:1rem}
+  @media(max-width:900px){
+    .gc-cta{margin-left:0;width:100%}
+    .giftcard .btn.gc-btn{width:100%;text-align:center}
+  }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/", "logo": "https://theestateorganiser.com/assets/og-image.png", "description": "Fill-in-the-blanks workbooks that record your accounts, passwords, wishes and final instructions, so your family is not left guessing."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/"}</script><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
@@ -519,12 +534,13 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       </div>
     </div>
 
-    <div class="bundle">
+    <div class="giftcard">
       <div>
-        <h3>Buying it for a parent?</h3>
-        <p>We print a copy just for them and post it to whichever address you choose, yours to wrap and hand over, or straight to their door. It arrives ready for a pen, no screens and no downloads.</p>
+        <h3>Buying for a parent, or as a gift?</h3>
+        <p>We print a copy just for them and post it to whichever address you choose, yours to wrap
+           and hand over, or straight to their door. It arrives ready for a pen.</p>
       </div>
-      <div class="b-cta"><a class="btn" href="https://checkout.theestateorganiser.com/gift-a-printed-book">Gift the printed book, $139</a></div>
+      <div class="gc-cta"><a class="btn gc-btn" href="https://checkout.theestateorganiser.com/gift-a-printed-book">Send one to them, $139</a></div>
     </div>
 
     <div style="text-align:center;margin:34px 0 0">
