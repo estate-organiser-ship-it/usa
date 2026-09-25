@@ -323,6 +323,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   .lg-micro{color:var(--sage);font-size:.8rem;margin:9px 0 0;text-align:center}
   @media(max-width:900px){.legacy{grid-template-columns:1fr;gap:22px;padding:20px 16px}}
   @media(max-width:520px){.lg-quad{grid-template-columns:1fr}}
+@media(min-width:901px){.tiles.book.fmt-two{grid-template-columns:repeat(2,1fr);max-width:780px;margin-left:auto;margin-right:auto}} /* 25 Sep 2026: Print Only removed on US/CA */
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "The Estate Organizer", "image": "https://www.theestateorganiser.com/assets/og-image.png", "description": "A complete, fill-in-the-blanks workbook for your accounts, passwords, wishes and final instructions, so the people you love aren't left guessing. Built for American families. $79.", "brand": {"@type": "Brand", "name": "The Estate Organizer"}, "offers": {"@type": "Offer", "price": "79.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "#choose-format", "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "US", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 30, "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn", "merchantReturnLink": "https://www.theestateorganiser.com/refund-policy/"}, "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}, "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}}}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to fill in?", "acceptedAnswer": {"@type": "Answer", "text": "Most people work through it over a few weeks, not a weekend, one section at a time, when you've got the energy. There's no rush, and you can save and come back any time."}}, {"@type": "Question", "name": "Is my information safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's a file you fill in on your own computer, or print and fill in by hand. Nothing is stored online or in anyone's cloud, so there's nothing to be breached. Where you keep it is entirely up to you."}}, {"@type": "Question", "name": "Is this legal or financial advice?", "acceptedAnswer": {"@type": "Answer", "text": "No, and that's by design. The Estate Organizer is a place to record your information and wishes. It isn't a Will, and it doesn't replace your attorney or accountant. It simply makes sure that when your family needs those professionals, they can find everything fast. Rules vary from state to state, so confirm the specifics with your own advisors."}}, {"@type": "Question", "name": "Does it work in my state?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's about gathering your accounts, passwords, documents and wishes in one place, which matters everywhere. Where state-specific steps come up, it points you to the right professional rather than guessing for you."}}, {"@type": "Question", "name": "What exactly do I get?", "acceptedAnswer": {"@type": "Answer", "text": "Three files, delivered instantly: the digital fillable PDF, a printable edition, and the individual chapters so you can print just what you need. Updates are yours to keep."}}]}</script>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
@@ -676,17 +677,6 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
         <a class="btn ghost" href="https://checkout.theestateorganiser.com/c8202684">Get the Digital Edition</a>
         <p class="micro">Digital version only, no physical book</p>
       </div>
-      <div class="tile">
-        <img class="tileimg" src="/assets/card-printed.jpg" alt="The printed Estate Organizer on a kitchen table">
-        <h4>Printed Edition</h4>
-        <p class="t-price">$139 <span>USD</span></p>
-        <p class="t-sub">Free shipping in the United States</p>
-        <p class="foryou">For you if a book in a drawer beats a file on a laptop, for you or for a parent.</p>
-        <p class="desc">The coil bound book, printed just for you and posted to your door. Fill it in with a pen at the kitchen table, no screens involved.</p>
-        <p class="bonus empty"></p>
-        <a class="btn ghost" href="https://checkout.theestateorganiser.com/printed-book-only">Get the Printed Edition</a>
-        <p class="micro">The printed book on its own</p>
-      </div>
       <div class="tile featured">
         <div class="tile-badge">Most people choose this</div><img class="tileimg" src="/assets/card-both.jpg" alt="The printed book and the digital edition together">
         <h4>Printed + Digital</h4>
@@ -849,7 +839,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       </details>
       <details>
         <summary>If I buy the printed book, do I get the digital copy too?</summary>
-        <p>The Printed + Digital option includes both, and that is the one most people choose. The Printed Edition on its own is just the book.</p>
+        <p>Yes. The printed book comes with the digital edition, which lands in your inbox straight away so you can start the same day.</p>
       </details>
       <details>
         <summary>What if the printed book arrives damaged?</summary>
