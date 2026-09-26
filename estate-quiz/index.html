@@ -343,7 +343,7 @@
   }
   function done(){ var eb=document.getElementById('eo-capture-error'); if(eb) eb.style.display='none'; var es=document.getElementById('erq-err'); if(es) es.style.display='none';
     if(sent)return;sent=true;try{fbq("track","Lead");}catch(e){}try{gtag('event','generate_lead');}catch(e){}
-    card.innerHTML='<div class="erq-brand">All set</div><h2 class="erq-h" style="font-size:1.7rem">Your Executor Toolkit is on its way</h2><p class="erq-sub">We have emailed it to you along with your results. You can also download it right now.</p><a class="erq-btn" href="'+TOOLKIT+'" download>Download the free Toolkit</a>'+offerHtml()+'<div class="erq-disc">'+DISC+'</div>';
+    card.innerHTML='<div class="erq-brand">All set</div><h2 class="erq-h" style="font-size:1.7rem">Your Executor Toolkit is on its way</h2><p class="erq-sub">We have emailed it to you along with your results. You can also download it right now.</p><a class="erq-btn" href="'+TOOLKIT+'" download>Download the free Toolkit</a><div style="margin-top:20px;padding-top:16px;border-top:1px solid #e6e1d6;text-align:center"><p style="margin:0 0 12px"><b style="color:#1B2150">Also yours: Look Here First.</b> One page for the first hour. The two people to call, your doctor, where your will and spare keys are kept. Print it and put it where your family will find it.</p><a href="/toolkit/Look-Here-First-The-Estate-Organizer.pdf" download style="display:inline-block;padding:12px 24px;border:2px solid #1B2150;border-radius:999px;color:#1B2150;font-weight:700;text-decoration:none">Download Look Here First (1 page PDF)</a></div>'+offerHtml()+'<div class="erq-disc">'+DISC+'</div>';
     up();
   }
   intro();
