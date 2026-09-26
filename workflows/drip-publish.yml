@@ -1,0 +1,136 @@
+# Scheduled blog drip.
+#
+# Queued posts live on the `post-queue` branch, which GitHub Pages does not serve,
+# so they return 404 until this workflow copies one onto `main` on its date.
+#
+# Two crons because Melbourne changes offset. 22:00 UTC is 09:00 during AEDT and
+# 08:00 during AEST; 23:00 UTC is 09:00 during AEST. The script refuses to publish
+# before 09:00 Melbourne local, so whichever run lands first at or after 09:00 wins
+# and the other is a no-op. A missed day publishes on the next run.
+#
+# Everything the job needs (queue.json, the posts, this script) comes from the
+# post-queue branch and is materialised OUTSIDE the working tree, so it can never
+# be committed to main by accident.
+
+name: Scheduled blog drip
+
+on:
+  schedule:
+    - cron: '0 22 * * *'
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report what would publish, change nothing'
+        type: boolean
+        default: true
+      force_slug:
+        description: 'Publish this slug now, ignoring its date (leave blank normally)'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: drip-publish
+  cancel-in-progress: false
+
+jobs:
+  drip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Materialise the queue branch outside the working tree
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin post-queue
+          mkdir -p "$RUNNER_TEMP/queue"
+          git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/queue"
+          echo "Queue contents:"
+          find "$RUNNER_TEMP/queue" -type f | sort
+
+      - name: Work out what is due
+        id: drip
+        run: |
+          set -euo pipefail
+          ARGS="--queue $RUNNER_TEMP/queue"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ -n "${{ inputs.force_slug }}" ]; then ARGS="$ARGS --force-slug ${{ inputs.force_slug }}"; fi
+          python3 "$RUNNER_TEMP/queue/scripts/drip_publish.py" $ARGS
+
+      - name: Confirm the queue never leaked into the tree
+        run: |
+          set -euo pipefail
+          if git status --porcelain | grep -qE '(^|/)(_queue|queue\.json|scripts/)'; then
+            echo "Queue files appeared in the working tree, refusing to commit."
+            git status --porcelain
+            exit 1
+          fi
+          git status --porcelain
+
+      - name: Commit and push
+        if: steps.drip.outputs.count != '0' && inputs.dry_run != true
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog sitemap.xml
+          git commit -m "Blog: publish scheduled post(s)
+
+          ${{ steps.drip.outputs.urls }}
+
+          Published automatically by .github/workflows/drip-publish.yml from the
+          post-queue branch."
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Ask GitHub Pages to rebuild
+        if: steps.drip.outputs.count != '0' && inputs.dry_run != true
+        run: |
+          curl -sS -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" \
+            -o /dev/null -w "pages build requested: HTTP %{http_code}\n"
+
+      - name: Wait for the new pages to answer 200
+        if: steps.drip.outputs.count != '0' && inputs.dry_run != true
+        run: |
+          set -euo pipefail
+          for url in ${{ steps.drip.outputs.urls }}; do
+            echo "waiting on $url"
+            for i in $(seq 1 60); do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "$url" || true)
+              if [ "$code" = "200" ]; then echo "  live after ${i}0s"; break; fi
+              if [ "$i" = "60" ]; then echo "  still $code after 10 minutes"; exit 1; fi
+              sleep 10
+            done
+          done
+
+      - name: Ping IndexNow
+        if: steps.drip.outputs.count != '0' && inputs.dry_run != true
+        run: |
+          set -euo pipefail
+          echo '${{ steps.drip.outputs.indexnow }}' > "$RUNNER_TEMP/indexnow.json"
+          for endpoint in https://api.indexnow.org/indexnow https://www.bing.com/indexnow; do
+            curl -sS -X POST "$endpoint" \
+              -H "Content-Type: application/json; charset=utf-8" \
+              -d @"$RUNNER_TEMP/indexnow.json" \
+              -o /dev/null -w "$endpoint: HTTP %{http_code}\n" || true
+          done
+
+      - name: Summary
+        run: |
+          {
+            echo "### Scheduled blog drip"
+            echo ""
+            echo "Published this run: **${{ steps.drip.outputs.count }}**"
+            echo ""
+            for url in ${{ steps.drip.outputs.urls }}; do echo "- $url"; done
+          } >> "$GITHUB_STEP_SUMMARY"
