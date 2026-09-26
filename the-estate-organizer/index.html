@@ -277,7 +277,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
 .vband .who{font-size:.87rem;color:var(--sage,#7C8A6A);}
 .vband .who b{color:var(--navy,#1B2150);}
 .vband a{color:var(--gold-d,#9a7a2e);}
-@media(min-width:901px){.tiles.book .tile:nth-child(2){order:3;}.tiles.book .tile.featured{order:2;transform:scale(1.035);z-index:1;}}
+@media(min-width:901px){.tiles.book .tile:nth-child(2){order:3;}.tiles.book .tile.featured{order:2;z-index:1;}}
 @media(max-width:900px){.tiles.book .tile.featured{order:-1;}}
 @media(min-width:901px){#letters .cards{grid-template-columns:repeat(2,1fr)}}
 
@@ -324,6 +324,12 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   @media(max-width:900px){.legacy{grid-template-columns:1fr;gap:22px;padding:20px 16px}}
   @media(max-width:520px){.lg-quad{grid-template-columns:1fr}}
 @media(min-width:901px){.tiles.book.fmt-two{grid-template-columns:repeat(2,1fr);max-width:780px;margin-left:auto;margin-right:auto}} /* 25 Sep 2026: Print Only removed on US/CA */
+.quickpick{display:none}
+@media(max-width:700px){.quickpick{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:22px auto 0}.quickpick .btn{width:100%;padding:16px 12px;font-size:1.05rem;text-align:center;box-sizing:border-box}.quickpick .qp-note{font-size:.9rem;color:var(--sage);margin:4px 0 0;text-align:center}}
+.qp-always{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:12px;max-width:none;margin:22px auto 24px}
+.qp-always .btn{width:auto;min-width:220px}
+.qp-always .qp-note{flex-basis:100%}
+@media(max-width:700px){.qp-always{flex-direction:column;max-width:420px}.qp-always .btn{width:100%}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "The Estate Organizer", "image": "https://www.theestateorganiser.com/assets/og-image.png", "description": "A complete, fill-in-the-blanks workbook for your accounts, passwords, wishes and final instructions, so the people you love aren't left guessing. Built for American families. $79.", "brand": {"@type": "Brand", "name": "The Estate Organizer"}, "offers": {"@type": "Offer", "price": "79.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "#choose-format", "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "US", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 30, "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn", "merchantReturnLink": "https://www.theestateorganiser.com/refund-policy/"}, "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}, "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}}}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to fill in?", "acceptedAnswer": {"@type": "Answer", "text": "Most people work through it over a few weeks, not a weekend, one section at a time, when you've got the energy. There's no rush, and you can save and come back any time."}}, {"@type": "Question", "name": "Is my information safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's a file you fill in on your own computer, or print and fill in by hand. Nothing is stored online or in anyone's cloud, so there's nothing to be breached. Where you keep it is entirely up to you."}}, {"@type": "Question", "name": "Is this legal or financial advice?", "acceptedAnswer": {"@type": "Answer", "text": "No, and that's by design. The Estate Organizer is a place to record your information and wishes. It isn't a Will, and it doesn't replace your attorney or accountant. It simply makes sure that when your family needs those professionals, they can find everything fast. Rules vary from state to state, so confirm the specifics with your own advisors."}}, {"@type": "Question", "name": "Does it work in my state?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's about gathering your accounts, passwords, documents and wishes in one place, which matters everywhere. Where state-specific steps come up, it points you to the right professional rather than guessing for you."}}, {"@type": "Question", "name": "What exactly do I get?", "acceptedAnswer": {"@type": "Answer", "text": "Three files, delivered instantly: the digital fillable PDF, a printable edition, and the individual chapters so you can print just what you need. Updates are yours to keep."}}]}</script>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
@@ -464,6 +470,11 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
         <p>The place to put everything your attorney&rsquo;s documents don&rsquo;t capture, so your executor isn&rsquo;t left playing detective. Start tonight, finish over a few weeks.</p>
       </a>
     </div>
+    <div class="quickpick qp-always">
+      <a class="btn" href="https://checkout.theestateorganiser.com/printed-book-order">Printed + Digital, $149</a>
+      <a class="btn ghost" href="https://checkout.theestateorganiser.com/c8202684">Digital, $79</a>
+      <p class="qp-note">Or keep reading and see what is inside first.</p>
+    </div>
     <p class="fineprint" style="max-width:840px;margin-left:auto;margin-right:auto;text-align:left">The Estate Organizer is a record-keeping tool. It is not a Will and it is not legal or financial advice. It sits alongside the documents your attorney prepares. A full estate planning package from an attorney is commonly quoted around $1,500 to $3,000+. Estimate for illustration only. Fees vary by state, by firm and by how complex your affairs are, so ask your own attorney for a quote.</p>
   </div>
 </section>
@@ -562,7 +573,124 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   </div>
 </section>
 
-<section style="background:var(--warm);border-bottom:1px solid var(--line)">
+<section id="choose-format" style="background:var(--warm);border-top:1px solid var(--line)">
+  <div class="wrap center">
+    <p class="eyebrow">One organizer, your choice of format</p>
+    <h2 class="sec">Choose how you want yours</h2>
+    <p class="sub">Same book, same sections. Pick the format that suits how you like to work.</p>
+    <div class="tiles book fmt-two" style="margin-top:34px">
+      <div class="tile">
+        <img class="tileimg" src="/assets/card-digital.jpg" alt="The Estate Organizer digital edition">
+        <h4>Digital Edition</h4>
+        <p class="t-price">$79 <span>USD</span></p>
+        <p class="t-sub">Fillable PDF, instant download</p>
+        <p class="foryou">For you if you would rather type than write, and want to start in the next five minutes.</p>
+        <p class="desc">The complete fillable Organizer as a PDF on your computer. Type straight into it, or print any section at home. Individual chapters included, so you print only what applies.</p>
+        <p class="bonus empty"></p>
+        <a class="btn ghost" href="https://checkout.theestateorganiser.com/c8202684">Get the Digital Edition</a>
+        <p class="micro">Digital version only, no physical book</p>
+      </div>
+      <div class="tile featured">
+        <div class="tile-badge">Most people choose this</div><img class="tileimg" src="/assets/card-both.jpg" alt="The printed book and the digital edition together">
+        <h4>Printed + Digital</h4>
+        <p class="t-price">$149 <span>USD</span></p>
+        <p class="t-sub">Free shipping, digital copy instantly</p>
+        <p class="foryou">For you if you want to start tonight and still end up with the book on the shelf.</p>
+        <p class="desc">The printed book posted to you, plus the digital edition in your inbox tonight. Start straight away, write it up properly when the book arrives.</p>
+        <p class="bonus empty"></p>
+        <a class="btn" href="https://checkout.theestateorganiser.com/printed-book-order">Get Printed + Digital</a>
+        <p class="micro">One order, everything, $149 USD</p>
+      </div>
+    </div>
+
+    <div class="legacy" id="complete-library">
+      <div class="lg-quad">
+        <div class="lg-card">
+          <div class="lg-art"><img class="lg-wide" src="/assets/legacy/book.png" alt="The printed Estate Organizer, American edition"></div>
+          <h5>The printed book</h5><p>Coil bound, printed for you, shipped free.</p>
+          <div class="lg-pair">the pair, $149</div>
+        </div>
+        <div class="lg-card">
+          <div class="lg-art"><span class="lg-tab"><img src="/assets/legacy/digital.png" alt="The fillable digital edition"></span></div>
+          <h5>The digital edition</h5><p>Fillable on your computer, delivered tonight.</p>
+          <div class="lg-pair">the pair, $149</div>
+        </div>
+        <div class="lg-card">
+          <div class="lg-art">
+            <img src="/assets/legacy/companion-inside.png" alt="" style="height:104px;transform:rotate(-9deg) translateX(-18px)">
+            <img src="/assets/legacy/companion-cover.png" alt="The Executor&rsquo;s Companion" style="height:112px;transform:rotate(3deg) translateX(12px)">
+          </div>
+          <h5>The Executor&rsquo;s Companion</h5><p>For whoever administers the estate. Instant download.</p>
+          <div class="lg-val">$39</div>
+        </div>
+        <div class="lg-card">
+          <div class="lg-art">
+            <img src="/assets/legacy/kit-inside.jpg" alt="" style="height:104px;transform:rotate(-9deg) translateX(-18px)">
+            <img src="/assets/legacy/kit-cover.jpg" alt="The Estate Conversation Kit" style="height:112px;transform:rotate(3deg) translateX(12px)">
+          </div>
+          <h5>The Conversation Kit</h5><p>Seven talks, before the book. Instant download.</p>
+          <div class="lg-val">$27</div>
+        </div>
+      </div>
+      <div>
+        <p class="lg-eyebrow">Everything, in one order</p>
+        <h3>The Legacy Edition</h3>
+        <p class="lg-blurb">The book both ways, and every companion we make, in one order.</p>
+        <div>
+          <div class="lg-line"><span>Printed book + digital edition</span><i>$149</i></div>
+          <div class="lg-line"><span>The Executor&rsquo;s Companion</span><i>$39</i></div>
+          <div class="lg-line lg-rule"><span>The Conversation Kit</span><i>$27</i></div>
+          <div class="lg-line lg-sub"><span>Bought one at a time</span><i>$215</i></div>
+          <div class="lg-line lg-yours"><span>Yours today</span><i>$179</i></div>
+        </div>
+        <a class="btn lg-btn" href="https://checkout.theestateorganiser.com/complete-library">Get the Legacy Edition</a>
+        <p class="lg-micro">One-time payment. Free shipping in the United States, digital tonight.</p>
+      </div>
+    </div>
+
+    <div class="reassure tight">
+      <span><i class="dot"></i>Secure checkout</span>
+      <span><i class="dot"></i>Digital arrives instantly</span>
+      <span><i class="dot"></i>Free shipping in the United States</span>
+      <span><i class="dot"></i>One-time payment</span>
+    </div>
+    <p class="fineprint" style="margin:22px auto 0">Each book is printed just for you: allow up to two weeks anywhere in the United States. The digital edition always arrives instantly.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="gift">
+      <p class="eyebrow">A gift that says you care</p>
+      <h3>Buying this for a parent?</h3>
+      <p>If you&rsquo;ve been wanting to help a mom or dad get their affairs in order, but every attempt at the conversation goes nowhere, this is a gentler way in. You&rsquo;re not asking them to think about the end. You&rsquo;re handing them something practical they can start filling in that same afternoon.</p>
+      <p>We print a copy just for them and post it to whichever address you choose. Have it sent to you to wrap and hand over, or straight to their door. It arrives ready for a pen, no screens and no downloads. Better still, sit down together and fill in the first pages. What you&rsquo;re really giving is a family that isn&rsquo;t left guessing.</p>
+      <a class="btn" href="https://checkout.theestateorganiser.com/gift-a-printed-book">Gift the printed book, $139</a>
+      <p class="micro" style="margin-top:12px">Printed to order &middot; free shipping in the United States</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="guar">
+      <p class="eyebrow">30 day guarantee</p>
+      <h3>The guarantees, plainly.</h3>
+      <p><strong>The digital edition</strong> carries a 30 day money back guarantee. Work through it, and if it isn&rsquo;t right for you, email us within 30 days for a full refund. No questions asked.</p>
+      <p><strong>Printed books</strong> are printed to order, just for you, so change-of-mind refunds don&rsquo;t apply to them. If your book arrives damaged, misprinted or faulty in any way, we replace it free of charge. The only risk is leaving your family to guess.</p>
+      <div class="sig">
+        <img src="/assets/will-founder.jpg" alt="Will Kimak, creator of The Estate Organizer">
+        <div>
+          This guarantee is my personal promise to you.
+          <b>Will Kimak</b>
+          Creator of The Estate Organizer
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <p class="eyebrow">The day it matters</p>
     <h2 class="sec">When the day comes, there are two versions of it.</h2>
@@ -655,130 +783,6 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
         <h4>She used to work for the lawyers</h4>
         <p>&ldquo;I used to work for lawyers, so Wills were a daily situation. I believe everyone with assets needs one.&rdquo;</p>
         <p class="who"><b>Connie</b></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="choose-format" style="background:var(--warm);border-top:1px solid var(--line)">
-  <div class="wrap center">
-    <p class="eyebrow">One organizer, your choice of format</p>
-    <h2 class="sec">Choose how you want yours</h2>
-    <p class="sub">Same book, same sections. Pick the format that suits how you like to work.</p>
-    <div class="tiles book" style="margin-top:34px">
-      <div class="tile">
-        <img class="tileimg" src="/assets/card-digital.jpg" alt="The Estate Organizer digital edition">
-        <h4>Digital Edition</h4>
-        <p class="t-price">$79 <span>USD</span></p>
-        <p class="t-sub">Instant download</p>
-        <p class="foryou">For you if you would rather type than write, and want to start in the next five minutes.</p>
-        <p class="desc">The complete fillable Organizer on your computer. Type straight into it, or print any section at home. Individual chapters included, so you print only what applies.</p>
-        <p class="bonus empty"></p>
-        <a class="btn ghost" href="https://checkout.theestateorganiser.com/c8202684">Get the Digital Edition</a>
-        <p class="micro">Digital version only, no physical book</p>
-      </div>
-      <div class="tile featured">
-        <div class="tile-badge">Most people choose this</div><img class="tileimg" src="/assets/card-both.jpg" alt="The printed book and the digital edition together">
-        <h4>Printed + Digital</h4>
-        <p class="t-price">$149 <span>USD</span></p>
-        <p class="t-sub">Free shipping, digital copy instantly</p>
-        <p class="foryou">For you if you want to start tonight and still end up with the book on the shelf.</p>
-        <p class="desc">The printed book posted to you, plus the digital edition in your inbox tonight. Start straight away, write it up properly when the book arrives.</p>
-        <p class="bonus empty"></p>
-        <a class="btn" href="https://checkout.theestateorganiser.com/printed-book-order">Get Printed + Digital</a>
-        <p class="micro">One order, everything, $149 USD</p>
-      </div>
-    </div>
-
-    <div class="legacy" id="complete-library">
-      <div class="lg-quad">
-        <div class="lg-card">
-          <div class="lg-art"><img class="lg-wide" src="/assets/legacy/book.png" alt="The printed Estate Organizer, American edition"></div>
-          <h5>The printed book</h5><p>Coil bound, printed for you, shipped free.</p>
-          <div class="lg-pair">the pair, $149</div>
-        </div>
-        <div class="lg-card">
-          <div class="lg-art"><span class="lg-tab"><img src="/assets/legacy/digital.png" alt="The fillable digital edition"></span></div>
-          <h5>The digital edition</h5><p>Fillable on your computer, delivered tonight.</p>
-          <div class="lg-pair">the pair, $149</div>
-        </div>
-        <div class="lg-card">
-          <div class="lg-art">
-            <img src="/assets/legacy/companion-inside.png" alt="" style="height:104px;transform:rotate(-9deg) translateX(-18px)">
-            <img src="/assets/legacy/companion-cover.png" alt="The Executor&rsquo;s Companion" style="height:112px;transform:rotate(3deg) translateX(12px)">
-          </div>
-          <h5>The Executor&rsquo;s Companion</h5><p>For whoever administers the estate. Instant download.</p>
-          <div class="lg-val">$39</div>
-        </div>
-        <div class="lg-card">
-          <div class="lg-art">
-            <img src="/assets/legacy/kit-inside.jpg" alt="" style="height:104px;transform:rotate(-9deg) translateX(-18px)">
-            <img src="/assets/legacy/kit-cover.jpg" alt="The Estate Conversation Kit" style="height:112px;transform:rotate(3deg) translateX(12px)">
-          </div>
-          <h5>The Conversation Kit</h5><p>Seven talks, before the book. Instant download.</p>
-          <div class="lg-val">$27</div>
-        </div>
-      </div>
-      <div>
-        <p class="lg-eyebrow">Everything, in one order</p>
-        <h3>The Legacy Edition</h3>
-        <p class="lg-blurb">The book both ways, and every companion we make, in one order.</p>
-        <div>
-          <div class="lg-line"><span>Printed book + digital edition</span><i>$149</i></div>
-          <div class="lg-line"><span>The Executor&rsquo;s Companion</span><i>$39</i></div>
-          <div class="lg-line lg-rule"><span>The Conversation Kit</span><i>$27</i></div>
-          <div class="lg-line lg-sub"><span>Bought one at a time</span><i>$215</i></div>
-          <div class="lg-line lg-yours"><span>Yours today</span><i>$179</i></div>
-        </div>
-        <a class="btn lg-btn" href="https://checkout.theestateorganiser.com/complete-library">Get the Legacy Edition</a>
-        <p class="lg-micro">One-time payment. Free shipping in the United States, digital tonight.</p>
-      </div>
-    </div>
-
-    <div class="reassure tight">
-      <span><i class="dot"></i>Secure checkout</span>
-      <span><i class="dot"></i>Digital arrives instantly</span>
-      <span><i class="dot"></i>Free shipping in the United States</span>
-      <span><i class="dot"></i>One-time payment</span>
-    </div>
-    <p class="fineprint" style="margin:22px auto 0">Each book is printed just for you: allow up to two weeks anywhere in the United States. The digital edition always arrives instantly.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="gift">
-      <p class="eyebrow">A gift that says you care</p>
-      <h3>Buying this for a parent?</h3>
-      <p>If you&rsquo;ve been wanting to help a mom or dad get their affairs in order, but every attempt at the conversation goes nowhere, this is a gentler way in. You&rsquo;re not asking them to think about the end. You&rsquo;re handing them something practical they can start filling in that same afternoon.</p>
-      <p>We print a copy just for them and post it to whichever address you choose. Have it sent to you to wrap and hand over, or straight to their door. It arrives ready for a pen, no screens and no downloads. Better still, sit down together and fill in the first pages. What you&rsquo;re really giving is a family that isn&rsquo;t left guessing.</p>
-      <a class="btn" href="https://checkout.theestateorganiser.com/gift-a-printed-book">Gift the printed book, $139</a>
-      <p class="micro" style="margin-top:12px">Printed to order &middot; free shipping in the United States</p>
-    </div>
-
-    <div class="gift" style="margin-top:26px">
-      <p class="eyebrow">Make it a set</p>
-      <h3>Add the Conversation Kit, so the talks happen too.</h3>
-      <p>The book covers the paperwork. The Estate Conversation Kit covers the talks, seven short guided conversations for the things families put off, like where the Will is and who does what.</p>
-      <p>Give them together and you hand over more than a book. You open the conversation. Tick the Conversation Kit box at checkout to add it for $19.</p>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="guar">
-      <p class="eyebrow">30 day guarantee</p>
-      <h3>The guarantees, plainly.</h3>
-      <p><strong>The digital edition</strong> carries a 30 day money back guarantee. Work through it, and if it isn&rsquo;t right for you, email us within 30 days for a full refund. No questions asked.</p>
-      <p><strong>Printed books</strong> are printed to order, just for you, so change-of-mind refunds don&rsquo;t apply to them. If your book arrives damaged, misprinted or faulty in any way, we replace it free of charge. The only risk is leaving your family to guess.</p>
-      <div class="sig">
-        <img src="/assets/will-founder.jpg" alt="Will Kimak, creator of The Estate Organizer">
-        <div>
-          This guarantee is my personal promise to you.
-          <b>Will Kimak</b>
-          Creator of The Estate Organizer
-        </div>
       </div>
     </div>
   </div>
