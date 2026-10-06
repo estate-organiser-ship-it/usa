@@ -176,7 +176,7 @@
         <h1>The Free Executor Toolkit</h1>
         <p class="lead">Being the executor is hard enough. This free guide gives you a clear path through the first days and the months that follow, so nothing important gets missed.</p>
         <form id="optin" class="optin-form" action="#" method="POST" novalidate>
-          <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name">
+          <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name" autocapitalize="words">
           <input type="email" name="form_submission[email]" placeholder="Your email address" autocomplete="email">
           <button type="submit" class="btn btn-lg">Send me the free toolkit</button>
         </form>
@@ -289,7 +289,7 @@
       <h2>Give the people you love a clear path.</h2>
       <p>Enter your email and I will send the free Executor Toolkit straight to you.</p>
       <form id="optin2" class="optin-form" action="#" method="POST" novalidate>
-        <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name">
+        <input type="text" name="form_submission[name]" placeholder="Your first name" autocomplete="given-name" autocapitalize="words">
         <input type="email" name="form_submission[email]" placeholder="Your email address" autocomplete="email">
         <button type="submit" class="btn btn-lg">Send me the free toolkit</button>
       </form>
@@ -324,6 +324,9 @@
   var PDF_URL = "Executor-Toolkit-The-Estate-Organizer.pdf";   // hosted in /toolkit/
   var delivered = false, posted = false;
   var RELAY='https://eo-capture-relay-production.up.railway.app/capture'; var MARKET='us';
+  function eoFirstName(v){v=(v||'').trim();if(!v||v.indexOf('@')>-1)return '';var f=v.split(/\s+/)[0].replace(/[.,;:!?]+$/,'');if(f.length>1&&(f===f.toLowerCase()||f===f.toUpperCase())){f=f.toLowerCase().replace(/(^|[-'])(\S)/g,function(m,a,b){return a+b.toUpperCase();});}return f;}
+  function eoNameMsg(raw){return (raw||'').indexOf('@')>-1?'That looks like an email. Please put your first name here.':'Please enter your first name';}
+  function eoNameErr(frm,msg){var p=frm.nextElementSibling;if(!p||p.className!=='eo-name-err'){p=document.createElement('p');p.className='eo-name-err';p.setAttribute('role','alert');p.style.cssText='color:#b23;font-size:14px;margin:0 0 10px';frm.parentNode.insertBefore(p,frm.nextSibling);}p.textContent=msg||'';p.style.display=msg?'block':'none';}
       function eoShowFail(){
     var all=document.querySelectorAll('button'), btn=null;
     for(var i=0;i<all.length;i++){ if(all[i].disabled){ btn=all[i]; break; } }
@@ -370,7 +373,7 @@
     frm.addEventListener('submit', function(e){
       var nmEl = frm.querySelector('input[type=text]');  var nm = nmEl ? nmEl.value.trim() : '';
       var emEl = frm.querySelector('input[type=email]'); var em = emEl ? emEl.value.trim() : '';
-      if(!nm){ e.preventDefault(); if(nmEl){ nmEl.focus(); } return; }
+      var first=eoFirstName(nm); if(!first){ e.preventDefault(); eoNameErr(frm,eoNameMsg(nm)); if(nmEl){ nmEl.focus(); } return; } eoNameErr(frm,''); nm=first;
       if(!em || em.indexOf('@') < 1){ e.preventDefault(); if(emEl){ emEl.focus(); } return; }
       e.preventDefault(); posted = true;
         var eoCtl=('AbortController' in window)?new AbortController():null;

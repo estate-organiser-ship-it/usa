@@ -244,6 +244,8 @@
 <script>
 (function(){
   var RELAY="https://eo-capture-relay-production.up.railway.app/capture";
+  function eoFirstName(v){v=(v||'').trim();if(!v||v.indexOf('@')>-1)return '';var f=v.split(/\s+/)[0].replace(/[.,;:!?]+$/,'');if(f.length>1&&(f===f.toLowerCase()||f===f.toUpperCase())){f=f.toLowerCase().replace(/(^|[-'])(\S)/g,function(m,a,b){return a+b.toUpperCase();});}return f;}
+  function eoNameMsg(raw){return (raw||'').indexOf('@')>-1?'That looks like an email. Please put your first name here.':'Please enter your first name';}
   var MARKET="us";
   var TOOLKIT="/toolkit/Executor-Toolkit-The-Estate-Organizer.pdf";
   var DISC="Educational content only. Not legal, financial or tax advice. Estate laws vary from state to state. Always consult a qualified professional about your specific situation.";
@@ -266,7 +268,7 @@
     var gaps=[];for(var i=0;i<Q.length;i++){if(ans[i]<2)gaps.push(Q[i].gap);}
     var msg;if(score>=9){msg="You are more organized than many families. There may still be a gap or two worth closing.";}else if(score>=5){msg="A solid start, with some important gaps still to close.";}else{msg="Like a lot of families, there is real work to do here. The good news: that is exactly what the free toolkit is for.";}
     var gh="";if(gaps.length){gh='<p class="erq-sub" style="margin-bottom:10px"><strong>Worth a look:</strong></p>';for(var g=0;g<gaps.length;g++){gh+='<div class="erq-gap">'+gaps[g]+'</div>';}}
-    card.innerHTML='<div class="erq-brand">Your result</div><div class="erq-score">'+score+'<span style="font-size:1.4rem;color:#9a9a9a">/12</span></div><p class="erq-sub" style="margin-top:6px">'+msg+'</p>'+gh+'<h2 class="erq-h" style="font-size:1.5rem;margin-top:28px">Get the free Executor Toolkit to close the gaps</h2><p class="erq-sub">A step-by-step roadmap for getting organized, with notification letters and a simple tracker. We will email it to you along with your results.</p><input class="erq-in" id="erq-name" type="text" placeholder="First name" autocomplete="given-name"><input class="erq-in" id="erq-email" type="email" placeholder="Email address" autocomplete="email" inputmode="email"><button class="erq-btn" id="erq-submit">Send me the free Toolkit</button><div id="erq-err" style="color:#b23;font-size:14px;margin-top:10px;display:none"></div><div class="erq-disc">'+DISC+'</div>';
+    card.innerHTML='<div class="erq-brand">Your result</div><div class="erq-score">'+score+'<span style="font-size:1.4rem;color:#9a9a9a">/12</span></div><p class="erq-sub" style="margin-top:6px">'+msg+'</p>'+gh+'<h2 class="erq-h" style="font-size:1.5rem;margin-top:28px">Get the free Executor Toolkit to close the gaps</h2><p class="erq-sub">A step-by-step roadmap for getting organized, with notification letters and a simple tracker. We will email it to you along with your results.</p><input class="erq-in" id="erq-name" type="text" placeholder="First name" autocomplete="given-name" autocapitalize="words"><input class="erq-in" id="erq-email" type="email" placeholder="Email address" autocomplete="email" inputmode="email"><button class="erq-btn" id="erq-submit">Send me the free Toolkit</button><div id="erq-err" style="color:#b23;font-size:14px;margin-top:10px;display:none"></div><div class="erq-disc">'+DISC+'</div>';
     document.getElementById("erq-submit").onclick=submit;
     document.getElementById("erq-email").addEventListener("keydown",function(e){if(e.key==="Enter")submit();});
     up();
@@ -276,7 +278,7 @@
     var email=(document.getElementById("erq-email").value||"").trim();
     var name=(document.getElementById("erq-name").value||"").trim();
     var err=document.getElementById("erq-err");
-    if(!name){document.getElementById("erq-name").focus();return;}
+    var first=eoFirstName(name); if(!first){err.textContent=eoNameMsg(name);err.style.display="block";document.getElementById("erq-name").focus();return;} err.style.display="none"; name=first;
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){err.textContent="Please enter a valid email address.";err.style.display="block";return;}
     var btn=document.getElementById("erq-submit");btn.textContent="Sending...";btn.disabled=true;
     var eoCtl=('AbortController' in window)?new AbortController():null;
