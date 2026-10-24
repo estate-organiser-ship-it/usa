@@ -363,6 +363,16 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
 .whichone .buy{justify-self:start}
 .whichone .buy .btn{white-space:normal;width:auto}
 }
+
+/* gift link in header */
+.hgift{color:#cfc9ba;text-decoration:none;font-size:.9rem;white-space:nowrap;margin-left:16px;border-bottom:1px solid transparent;padding-bottom:2px}
+.hgift:hover{color:#fff;border-bottom-color:#C8A24B}
+.hbar{flex-wrap:wrap;row-gap:4px}
+.hbar .btn{white-space:nowrap}
+.hnav a{white-space:nowrap}
+.hnav+.btn+.hgift{margin-left:0}
+@media(min-width:901px) and (max-width:1320px){.hbar .ed-pill{display:none}}
+@media(max-width:640px){.hgift{font-size:.82rem;margin-left:auto}}
 </style>
 </head>
 <body>
@@ -377,6 +387,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       <a href="#faq">Questions</a>
     </nav>
     <a class="btn" href="#choose-format">Get the book</a>
+    <a class="hgift" href="/gift/">Give it as a gift</a>
   </div>
 </header>
 <a id="top"></a>
@@ -990,6 +1001,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       </div>
       <div>
         <a href="#top">Get the book</a>
+        <a href="/gift/">Give it as a gift</a>
         <a href="/blog/">Blog</a>
         <a href="/about/">About</a>
         <a href="/start-here/">Start here</a>

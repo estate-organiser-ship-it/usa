@@ -341,6 +341,16 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
     .giftcard .btn.gc-btn{width:100%;text-align:center}
   }
 @media(min-width:901px){.tiles.book.fmt-two{grid-template-columns:repeat(2,1fr);max-width:780px;margin-left:auto;margin-right:auto}} /* 25 Sep 2026: Print Only removed on US/CA */
+
+/* gift link in header */
+.hgift{color:#cfc9ba;text-decoration:none;font-size:.9rem;white-space:nowrap;margin-left:16px;border-bottom:1px solid transparent;padding-bottom:2px}
+.hgift:hover{color:#fff;border-bottom-color:#C8A24B}
+.hbar{flex-wrap:wrap;row-gap:4px}
+.hbar .btn{white-space:nowrap}
+.hnav a{white-space:nowrap}
+.hnav+.btn+.hgift{margin-left:0}
+@media(min-width:901px) and (max-width:1320px){.hbar .ed-pill{display:none}}
+@media(max-width:640px){.hgift{font-size:.82rem;margin-left:auto}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/", "logo": "https://theestateorganiser.com/assets/og-image.png", "description": "Fill-in-the-blanks workbooks that record your accounts, passwords, wishes and final instructions, so your family is not left guessing.", "sameAs": ["https://www.theestateorganiser.com.au/", "https://theestateorganiser.com/", "https://theestateorganiser.ca/", "https://www.facebook.com/theestateorganiser/"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "The Estate Organizer", "url": "https://theestateorganiser.com/"}</script><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
@@ -360,6 +370,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       <a href="#faq">Questions</a>
     </nav>
     <a class="btn" href="/the-estate-organizer/">Get the book</a>
+    <a class="hgift" href="/gift/">Give it as a gift</a>
   </div>
 </header>
 <a id="top"></a>
@@ -725,6 +736,14 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   </div>
 </section>
 
+<section style="background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap center">
+    <h2 class="sec">Give it as a gift this Christmas</h2>
+    <p class="sub" style="max-width:620px;margin:10px auto 24px">A sealed envelope lands in their inbox on Christmas morning with your letter, your voice if you want, and their own The Estate Organizer inside.</p>
+    <a href="/gift/" class="btn btn-lg">See the gift</a>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="fbar">
@@ -734,6 +753,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       </div>
       <div>
         <a href="/the-estate-organizer/">Get the book</a>
+        <a href="/gift/">Give it as a gift</a>
         <a href="/toolkit/">Free toolkit</a>
         <a href="/reviews/">Reviews</a>
         <a href="/blog/">Blog</a>

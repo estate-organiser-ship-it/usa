@@ -295,6 +295,16 @@ details{border-bottom:1px solid rgba(27,33,80,.12)}
   .guar .seal{flex:0 0 112px;width:112px;height:112px}
   .guar .seal b{font-size:2.6rem}
 }
+
+/* gift link in header */
+.hgift{color:#cfc9ba;text-decoration:none;font-size:.9rem;white-space:nowrap;margin-left:16px;border-bottom:1px solid transparent;padding-bottom:2px}
+.hgift:hover{color:#fff;border-bottom-color:#C8A24B}
+.hbar{flex-wrap:wrap;row-gap:4px}
+.hbar .btn{white-space:nowrap}
+.hnav a{white-space:nowrap}
+.hnav+.btn+.hgift{margin-left:0}
+@media(min-width:901px) and (max-width:1320px){.hbar .ed-pill{display:none}}
+@media(max-width:640px){.hgift{font-size:.82rem;margin-left:auto}}
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
@@ -315,6 +325,7 @@ details{border-bottom:1px solid rgba(27,33,80,.12)}
       <a href="#faq">Questions</a>
     </nav>
     <a class="btn" href="https://checkout.theestateorganiser.com/08ead4c5">Get the Kit, $27</a>
+    <a class="hgift" href="/gift/">Give it as a gift</a>
   </div>
 </header>
 <a id="top"></a>
@@ -642,6 +653,7 @@ details{border-bottom:1px solid rgba(27,33,80,.12)}
       </div>
       <div>
         <a href="/the-estate-organizer/">Get the book</a>
+        <a href="/gift/">Give it as a gift</a>
         <a href="/blog/">Blog</a>
         <a href="/about/">About</a>
         <a href="/start-here/">Start here</a>

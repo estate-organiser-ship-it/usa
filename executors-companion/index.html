@@ -260,6 +260,16 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
   .hbar .btn{margin-left:auto;padding:11px 16px;font-size:1rem;font-weight:800;}
   .btn-sub{display:block;font-size:.85em;font-weight:600;margin-top:2px;}
 }
+
+/* gift link in header */
+.hgift{color:#cfc9ba;text-decoration:none;font-size:.9rem;white-space:nowrap;margin-left:16px;border-bottom:1px solid transparent;padding-bottom:2px}
+.hgift:hover{color:#fff;border-bottom-color:#C8A24B}
+.hbar{flex-wrap:wrap;row-gap:4px}
+.hbar .btn{white-space:nowrap}
+.hnav a{white-space:nowrap}
+.hnav+.btn+.hgift{margin-left:0}
+@media(min-width:901px) and (max-width:1320px){.hbar .ed-pill{display:none}}
+@media(max-width:640px){.hgift{font-size:.82rem;margin-left:auto}}
 </style>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
@@ -282,6 +292,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       <a href="#faq">Questions</a>
     </nav>
     <a class="btn" href="https://checkout.theestateorganiser.com/5f12b299">Get the Companion, $39</a>
+    <a class="hgift" href="/gift/">Give it as a gift</a>
   </div>
 </header>
 <a id="top"></a>
@@ -628,6 +639,7 @@ footer .disc,footer .legal{margin-top:20px;font-size:.8rem;line-height:1.6;color
       </div>
       <div>
         <a href="https://checkout.theestateorganiser.com/5f12b299">Get the Companion, $39</a>
+        <a href="/gift/">Give it as a gift</a>
         <a href="/toolkit/">Free Executor Toolkit</a>
         <a href="/about/">About</a>
         <a href="/start-here/">Start here</a>
