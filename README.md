@@ -17,6 +17,10 @@ copies it onto `main` on its date.
 ## Schedule
 
 - **2026-10-02** 09:00 Melbourne: `what-to-do-when-someone-dies`
+- **2026-11-19** 09:00 Melbourne: `medicare-savings-programs`
+- **2026-12-03** 09:00 Melbourne: `social-security-lump-sum-death-payment`
+- **2026-12-17** 09:00 Melbourne: `va-headstone-marker-for-veterans`
+- **2026-12-31** 09:00 Melbourne: `savings-bonds-after-death-treasury-hunt`
 
 ## Changing the schedule
 
