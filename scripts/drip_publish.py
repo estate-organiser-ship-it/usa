@@ -85,6 +85,27 @@ def add_to_sitemap(repo, site, slug, date):
     return True
 
 
+def add_to_llms(repo, site, slug, title, desc):
+    """Keep llms.txt (the summary AI assistants read) in step with the blog."""
+    f = repo / "llms.txt"
+    if not f.exists():
+        return False
+    loc = f"{ORIGINS[site]}/blog/{slug}/"
+    lines = f.read_text(encoding="utf-8").rstrip("\n").split("\n")
+    if any(loc in x for x in lines) or "## Articles" not in lines:
+        return False
+    name = title.split(" | ")[0].strip()
+    i = lines.index("## Articles")
+    j = i + 1
+    while j < len(lines) and not lines[j].startswith("## "):
+        j += 1
+    while j - 1 > i and not lines[j - 1].strip():
+        j -= 1
+    lines[j:j] = [f"- [{name}]({loc}): {desc}"]
+    f.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return True
+
+
 def due(entry, now, publish_hour, force_slug):
     if force_slug and entry["slug"] == force_slug:
         return True
@@ -141,6 +162,7 @@ def main():
         shutil.copy2(src, live)
         add_to_index(repo, site, slug, date, title, desc)
         add_to_sitemap(repo, site, slug, date)
+        add_to_llms(repo, site, slug, title, desc)
         published.append(f"{ORIGINS[site]}/blog/{slug}/")
 
     out = os.environ.get("GITHUB_OUTPUT")
